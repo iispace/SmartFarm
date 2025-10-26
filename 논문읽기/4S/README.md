@@ -19,7 +19,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 |용어|설명|
 |:-:|:-|
 |VIs|Vegetation Indices, 식생지수|
-|fPAR|Fraction of Absorbed Photosynthetically Active Radiation, 광합성 유효 복사량|
+|fPAR|Fraction of Absorbed Photosynthetically Active Radiation, 광합성 유효 복사량. 식물이 흡수한 PAR(약 400 ~ 700nm) 범위의 빛의 비율로 식물의 광합성 능력과 생장 상태를 평가하는 지표|
 |LAI|Leaf Area Index, 엽면적지수|
 |GI|Green Index, 마이크로 카메라로 촬영한 이미지에서 녹색 성분의 비율|
 |Gap fraction-based LAI|LED 센서를 통해 측정한 광 투과율(틈 비율)을 기반으로 계산된 엽면적지수(LAI)|
@@ -63,10 +63,25 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 
 - 데이터 수집 및 처리:
 
-    - 위쪽과 아랫쪽에 설치한 센서의 값을 비교하여 반사율 계산(Spectral Reflectance)
+    - 위쪽과 아랫쪽에 설치한 센서의 값을 비교하여 반사율(&rho;) 계산(Spectral Reflectance)
         - 위쪽 센서: 하늘에서 들어오는 빛(입사광) 측정
         - 아랫쪽 센서: 식생에서 반사된 빛 측정
-        - Spectral Reflectance = 반사된 빛 / 입사된 빛
+        - Spectral Reflectance (&rho;) = 반사된 빛 / 입사된 빛
+    
+    - <img width="367" height="112" alt="image" src="https://github.com/user-attachments/assets/53428a0e-7bfd-45c9-944d-a29de1cab879" />
+    
+      - &rho; : Spectral Reflectance
+      - G : a gain factor (2.5)
+      - C<sub>1</sub> : 6  (one coefficient of the aerosol resistance term)
+      - C<sub>2</sub> : 7.5 (the other coefficient of the aerosol resistance term)
+      - L : 1 (soil adjustment factor)
+      - 위에 나열한 값들(&rho;, G, C<sub>1</sub>, C<sub>2</sub>, L)은 선행 연구를 참조한 값인 듯.(Huete et al., 2002, Jiang et al., 2008))
+ 
+    - 9600 bps로 수집된 LED 데이터를 분당 평균 데이터로 저장.
+    - NDVI와 EVI는 분당 평균 데이터를 이용하여 매분 계산하여 30분 간격으로 평균 계산
+    - 넓은 면적(180°)을 가진 Jaz 분광기(코사인 보정기를 부착한 고정밀 분광복사계)와 4S를 비교하기 위해 4쌍의 LED(센서)에서 얻은 데이터를 평균화하여 비교함. (예: Green LED 4개의 값을 평균값 1개로 처리)
+    
+    - fPAR 계산: 철제 데크 위에 설치된 세 개의 LED 센서 세트를 사용하여 입사광(PAR incoming), 반사광(PAR reflected), 투과광(PAR transmitted)를 측정함. 각 세트는 위쪽(zenith)과 아랫쪽(nadir) 방향으로 장착된 LED센서를 말함.
   
 
 # 추가 내용
