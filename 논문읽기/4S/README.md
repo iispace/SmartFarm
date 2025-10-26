@@ -46,7 +46,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 
 # 추가 내용
 
-1. <a id="userguide_modis"></a>[MOD09_UserGuide](http://modis-sr.ltdri.org/guide/MOD09_UserGuide_v1.4.pdf)
+1. <a id="userguide_modis"></a>[MOD09_UserGuide](https://modis-land.gsfc.nasa.gov/pdf/MOD09_UserGuide_v1.4.pdf)
 2. <a id="info01"></a>[MODIS 위성 영상의 활용 방법 소개](https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202030161655677&oCn=JAKO202030161655677&dbt=JAKO&journal=NJOU00291580)
 3. <a id="info02"></a>MODIS 위성 영상 획득 사이트<br>
     - [AppEEARS](https://lpdaacsvc.cr.usgs.gov/appeears)
