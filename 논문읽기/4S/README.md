@@ -3,7 +3,7 @@ Continuous observation of vegetation canopy dynamics using an integrated low-cos
 [Github](https://github.com/Kinznice/Smart-Surface-Sensing-System/tree/master)
 
 # 저자
-Kim, J., Ryu, Y., Jiang, C., & Hwang, Y.
+Jongmin Kim, Youngryel Ryu, Chongya Jiang, Yorum Hwang
 
 # 출처
 Agricultural and forest meteorology, 264, 164-177. 2019
