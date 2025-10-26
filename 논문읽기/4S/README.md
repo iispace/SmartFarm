@@ -1,5 +1,6 @@
 # 제목
-Continuous observation of vegetation canopy dynamics using an integrated low-cost, near-surface remote sening system
+Continuous observation of vegetation canopy dynamics using an integrated low-cost, near-surface remote sensing system
+[Github](https://github.com/Kinznice/Smart-Surface-Sensing-System/tree/master)
 
 # 저자
 Kim, J., Ryu, Y., Jiang, C., & Hwang, Y.
