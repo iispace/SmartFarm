@@ -30,17 +30,24 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 |Sentinel-2| 유럽우주국(ESA)이 운영하는 지구 관측 위성 시리즈로 Copernicus 프로그램의 핵심 구성 요소 중 하나. 10m, 20m, 60m 공간 해상도(밴드별로 다름), 총 13개 밴드, 동일 지역을 최소 5일마다 촬영|
 |CubeSet|10x10x10(cm)크기의 초소형 위성|
 |Constellations of CubeSet|CubeSat 위성 군집. 여러 개의 CubeSat을 동시에 궤도에 배치하여 서로 보완적으로 작동하게 하는 방식. 이를 통해 지구의 특정 지역을 더 자주, 더 정밀하게 관측할 수 있음.|
+|K3100 Solar Cell chamber| K3100이라는 모델의 IPCE(Incident Photon-to-Current Efficiency) 측정 시스템. 특정 파장의 빛을 선택적으로 방출하고, 그 빛에 대한 태양전지 또는 광센서의 반응을 측정함.|
+|solar irradiance|태양 복사량|
 
 <br><hr>
 
 # Materials and methods
 
-- <b>Calibration and evaluating the LED:</b> 적색, 녹색, 청색 및 근적외선(NIR) 영역의 스펙트럼 파장 대역이 MODIS 스펙트럼 대역[(UserGuide 참고)](#userguide_modis)과 일치하는 LED를 선택하기 위해서, 스펙트럼 선택적 광을 방출하는 태양전지 챔버(K3100 태양전지 IPCE 측정 시스템, Mc Science, 수원, 대한민국)를 사용하여 다양한 종류의 LED를 테스트하였음.
--
--  
+- <b>Calibration and evaluating the LED:</b> 적색, 녹색, 청색 및 근적외선(NIR) 영역의 스펙트럼 파장 대역이 MODIS 스펙트럼 대역[(UserGuide 참고)](#userguide_modis)과 일치하는 LED를 선택하기 위해서, 스펙트럼 선택적 광을 방출하는 태양전지 챔버(K3100 태양전지 IPCE 측정 시스템, Mc Science, 수원, 대한민국)를 사용하여 다양한 종류의 LED를 테스트하였으며, 그 결과로 다음과 같은 파장을 가진 R,G,B,NIR LED를 선택하고 각 LED의 FWHM 값을 확인함(FWHM 값을 알면 파장의 범위도 알 수 있음).
+  
+<div align="center">
+<img width="521" height="192" alt="image" src="https://github.com/user-attachments/assets/b0ee8e90-3fc2-401c-b645-d0d688b0f0dd"/>
+</div>
 
-- ㅇ
-- ㅇ
+- <b>Cover the LED sensors with Teflon diffuser:</b> 유입되는 빛이 LED 헤드 인클로저 내부로 완전히 확산되도록 하기 위해 LED 센서를 테플론으로 덮어 분광 조도 측정
+  
+- <b>LED sensor calbiration:</b> LED 센서 보정을 위해, 다양한 복사 강도(광량의 정도: 60 ~ 1000W/m<sup>2</sup>) 조건에서 LED(LED 센서)에서 출력된 전압값(DN, Digital Number)을 코사인 보정기가 설치된 FieldSpec 4 Wide-Res Field Spectroradiometer라는 고정밀 야외용 분광복사계로 측정한 spectral irradiance( 스펙트럼별 조도, 복사량, 복사 조도값)와 비교. 즉, FieldSpec 4로 350 ~ 2500nm 범위의 스펙트럼 복사조로를 1nm 간격으로 수집한 후, 수집된 데이터에서 각 LED의 FWHM과 파장 범위에 해당하는 범위의 복사조도값 추출 후 평균하여 LED 센서의 기준값으로 사용
+
+- <b>fPAR 모니터링:</b> R,G,B LED를 조합하여(PAR =  &alpha; × red + &beta; x green + &gamma; x blue) PAR 값을 결정함. 이 때 사용된 회귀 계수 &alpha;, &beta;, &gamma;는 linear regression model을 적용하여 구함. 이렇게 구한 PAR 값은 비교 기준이 되는 값("PQS 1 PAR quantum sensor"이라는 광량 측정 센서로 측정한 PAR 값)을 이용하여 보정하는 작업을 거쳐 최종적으로  &alpha;, &beta;, &gamma; 값 설정.
 
 <br>
 
