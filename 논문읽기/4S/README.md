@@ -32,6 +32,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 |Constellations of CubeSet|CubeSat 위성 군집. 여러 개의 CubeSat을 동시에 궤도에 배치하여 서로 보완적으로 작동하게 하는 방식. 이를 통해 지구의 특정 지역을 더 자주, 더 정밀하게 관측할 수 있음.|
 |K3100 Solar Cell chamber| K3100이라는 모델의 IPCE(Incident Photon-to-Current Efficiency) 측정 시스템. 특정 파장의 빛을 선택적으로 방출하고, 그 빛에 대한 태양전지 또는 광센서의 반응을 측정함.|
 |solar irradiance|태양 복사량|
+|spectral reflectance|스펙트럼 반사율|
 
 <br><hr>
 
@@ -50,6 +51,22 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 - <b>fPAR 모니터링:</b> R,G,B LED를 조합하여(PAR =  &alpha; × red + &beta; x green + &gamma; x blue) PAR 값을 결정함. 이 때 사용된 회귀 계수 &alpha;, &beta;, &gamma;는 linear regression model을 적용하여 구함. 이렇게 구한 PAR 값은 비교 기준이 되는 값("PQS 1 PAR quantum sensor"이라는 광량 측정 센서로 측정한 PAR 값)을 이용하여 보정하는 작업을 거쳐 최종적으로  &alpha;, &beta;, &gamma; 값 설정.
 
 <br>
+
+# 4S 센서 설치 장소, 설치 방법, 데이터 수집 및 처리
+
+- 설치 장소: (벼)논
+- 설치 방법:
+<div align="center">
+  <img width="529" height="744" alt="image" src="https://github.com/user-attachments/assets/5bda8786-5ecf-4a93-a14a-aaee1c02a999" />
+</div>
+
+- 데이터 수집 및 처리:
+
+    - 위쪽과 아랫쪽에 설치한 센서의 값을 비교하여 반사율 계산(Spectral Reflectance)
+        - 위쪽 센서: 하늘에서 들어오는 빛(입사광) 측정
+        - 아랫쪽 센서: 식생에서 반사된 빛 측정
+        - Spectral Reflectance = 반사된 빛 / 입사된 빛
+  
 
 # 추가 내용
 
