@@ -25,9 +25,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 |NDVI|Normalized Difference Vegetation Index|
 |EVI|Enhanced Vegetation Index|
 |MODIS|NASA가 육상 관측을 위해 1999년부터 운용 중인 Terra 위성과 해양 관측을 위해 2002년부터 운용중인 Aqua 위성에 탑재된 센서. 다양한 공간 해상도를 가진 총 36개의 밴드 제공.<br> 밴드 1 ~ 2(250m), 밴드 3 ~ 7(500m), 밴드 8~36(1000m)|
-|LandSat 8| 미국 지질조사국(USGS)이 NASA와 공동 운영하는 지구 관측 위성. Landsat 프로그램의 8번째 위성. 30m 공간 해상도의 영상을 제공하는 위성, 총 11개의 촬영 밴드(가시광선, 근적외선, 단파장 적외선, 열적외선 등), 동일 지역을 최소 16일마다 촬영 제목
-Continuous observation of vegetation canopy dynamics using an integrated low-cost, near-surface remote sensing system
-[Github](https://github.com/Kinznice/Smart-Surface-Sensing-System/tree/master)
+|LandSat 8| 미국 지질조사국(USGS)이 NASA와 공동 운영하는 지구 관측 위성. Landsat 프로그램의 8번째 위성. 30m 공간 해상도의 영상을 제공하는 위성, 총 11개의 촬영 밴드(가시광선, 근적외선, 단파장 적외선, 열적외선 등), 동일 지역을 최소 16일마다 촬영 
 
 # 저자
 Jongmin Kim, Youngryel Ryu, Chongya Jiang, Yorum Hwang
