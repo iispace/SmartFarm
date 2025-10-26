@@ -25,7 +25,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 |NDVI|Normalized Difference Vegetation Index|
 |EVI|Enhanced Vegetation Index|
 |MODIS|NASA가 육상 관측을 위해 1999년부터 운용 중인 Terra 위성과 해양 관측을 위해 2002년부터 운용중인 Aqua 위성에 탑재된 센서. 다양한 공간 해상도를 가진 총 36개의 밴드 제공.<br> 밴드 1 ~ 2(250m), 밴드 3 ~ 7(500m), 밴드 8~36(1000m)|
-|LandSat 8|30m 공간 해상도의 영상을 제공하는 위성|
+|LandSat 8| 미국 지질조사국(USGS)이 NASA와 공동 운영하는 지구 관측 위성. Landsat 프로그램의 8번째 위성. 30m 공간 해상도의 영상을 제공하는 위성, 총 11개의 촬영 밴드(가시광선, 근적외선, 단파장 적외선, 열적외선 등)|
 |Sentinel-2|10m 공간 해상도의 영상을 제공하는 위성|
 |CubeSet|10x10x10(cm)크기의 초소형 위성|
 |Constellations of CubeSet|CubeSat 위성 군집. 여러 개의 CubeSat을 동시에 궤도에 배치하여 서로 보완적으로 작동하게 하는 방식. 이를 통해 지구의 특정 지역을 더 자주, 더 정밀하게 관측할 수 있음.|
