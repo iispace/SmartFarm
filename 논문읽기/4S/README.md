@@ -28,3 +28,14 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 |Sentinel-2|10m 공간 해상도의 영상을 제공하는 위성|
 |CubeSet|10x10x10(cm)크기의 초소형 위성|
 |Constellations of CubeSet|CubeSat 위성 군집. 여러 개의 CubeSat을 동시에 궤도에 배치하여 서로 보완적으로 작동하게 하는 방식. 이를 통해 지구의 특정 지역을 더 자주, 더 정밀하게 관측할 수 있음.|
+
+<br><hr>
+
+# 추가 내용
+1. <a id="info01"></a>[MODIS 위성 영상의 활용 방법 소개](https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202030161655677&oCn=JAKO202030161655677&dbt=JAKO&journal=NJOU00291580)
+2. <a id="info02"></a>MODIS 위성 영상 획득 사이트<br>
+    - [AppEEARS](https://lpdaacsvc.cr.usgs.gov/appeears)
+    - [Earth Data Search](https://www.earthdata.nasa.gov/)
+    - [EarthExplorer](https://earthexplorer.usgs.gov/)
+   
+   
