@@ -33,9 +33,21 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 
 <br><hr>
 
+# Materials and methods
+
+- <b>Calibration and evaluating the LED:</b> 적색, 녹색, 청색 및 근적외선(NIR) 영역의 스펙트럼 파장 대역이 MODIS 스펙트럼 대역[(UserGuide 참고)](#userguide_modis)과 일치하는 LED를 선택하기 위해서, 스펙트럼 선택적 광을 방출하는 태양전지 챔버(K3100 태양전지 IPCE 측정 시스템, Mc Science, 수원, 대한민국)를 사용하여 다양한 종류의 LED를 테스트하였음.
+-
+-  
+
+- ㅇ
+- ㅇ
+
+<br>
+
 # 추가 내용
-1. <a id="info01"></a>[MODIS 위성 영상의 활용 방법 소개](https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202030161655677&oCn=JAKO202030161655677&dbt=JAKO&journal=NJOU00291580)
-2. <a id="info02"></a>MODIS 위성 영상 획득 사이트<br>
+1.<a id="userguide_modis"></a>[MOD09_UserGuide](http://modis-sr.ltdri.org/guide/MOD09_UserGuide_v1.4.pdf)
+2. <a id="info01"></a>[MODIS 위성 영상의 활용 방법 소개](https://scienceon.kisti.re.kr/commons/util/originalView.do?cn=JAKO202030161655677&oCn=JAKO202030161655677&dbt=JAKO&journal=NJOU00291580)
+3. <a id="info02"></a>MODIS 위성 영상 획득 사이트<br>
     - [AppEEARS](https://lpdaacsvc.cr.usgs.gov/appeears)
     - [Earth Data Search](https://www.earthdata.nasa.gov/)
     - [EarthExplorer](https://earthexplorer.usgs.gov/)
