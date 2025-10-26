@@ -22,6 +22,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 |fPAR|Fraction of Absorbed Photosynthetically Active Radiation, 광합성 유효 복사량. 식물이 흡수한 PAR(약 400 ~ 700nm) 범위의 빛의 비율로 식물의 광합성 능력과 생장 상태를 평가하는 지표|
 |LAI|Leaf Area Index, 엽면적지수|
 |GI|Green Index, 마이크로 카메라로 촬영한 이미지에서 녹색 성분의 비율|
+|GF|Gap Fraction, 식물 캐노피에서 빛이 통과할 수 있는 빈 공간의 비율. 즉, 잎 사이의 틈을 통해 빛이 얼마나 들어오는 지를 측정하는 값|
 |Gap fraction-based LAI|LED 센서를 통해 측정한 광 투과율(틈 비율)을 기반으로 계산된 엽면적지수(LAI)|
 |Green LAI|전체 LAI 중에서 광합성에 실제로 기여하는 녹색 잎의 면적만을 반영한 LAI|
 |NDVI|Normalized Difference Vegetation Index|
@@ -82,6 +83,20 @@ Agricultural and forest meteorology, 264, 164-177. 2019
     - 넓은 면적(180°)을 가진 Jaz 분광기(코사인 보정기를 부착한 고정밀 분광복사계)와 4S를 비교하기 위해 4쌍의 LED(센서)에서 얻은 데이터를 평균화하여 비교함. (예: Green LED 4개의 값을 평균값 1개로 처리)
     
     - fPAR 계산: 철제 데크 위에 설치된 세 개의 LED 센서 세트를 사용하여 입사광(PAR incoming), 반사광(PAR reflected), 투과광(PAR transmitted)를 측정함. 각 세트는 위쪽(zenith)과 아랫쪽(nadir) 방향으로 장착된 LED센서를 말함.
+        - 입사광과 반사광은 NDVI 및 EVI를 측정하던 동일한 3개의 붐(지지대)에서 모니터링되었고, 간헐적으로 관개되는 논에서 투과광을 측정하기 위해서는 LED 센서를 각 4S 시스템과 함께 스티로폼 부표에 고정하여, 수위에 따라 수직으로 움직이는 정사각형 철제 프레임 안에 설치
+        - <img width="306" height="56" alt="image" src="https://github.com/user-attachments/assets/fbb5ab40-da68-483a-aae4-2b86b9afe3ef" />
+        
+    - LAI 계산: 캐노피 위와 아래에 설치된 LED 센서의 블루 밴드를 통해 입사 스펙트럼 복사조도 값(spectral irradiance)을 측정하여 Gap Fraction(GF) 계산 (캐노피의 산란 효과를 최소화하기 위해 블루 밴드 사용. 파란색 빛은 식물 캐노피에서 산란이 가장 적은 파장대임. 적색이나 근적외선 등 다른 파장대는 잎에 의해 산란되거나 흡수되기가 더 쉬워서 정확한 광 트과 측정이 어려움)
+    - <img width="325" height="65" alt="image" src="https://github.com/user-attachments/assets/0918942f-32f8-4c72-9a9c-b61c117fa189" />
+
+    - <img width="147" height="60" alt="image" src="https://github.com/user-attachments/assets/87772b39-f3c7-4c0a-9967-321d3e7fad85" />
+    
+        - k: the extinction coefficient under diffuse sky conditions
+        - &Omega;<sub>e</sub> : element clumping index  (식물 캐노피-덮개구조-의 잎이 얼마나 뭉쳐 있는지(군집화 정도)를 나타내는 지표
+        - 
+        
+
+
   
 
 # 추가 내용
