@@ -54,6 +54,14 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 
 <br>
 
+# 4S
+<img width="484" height="354" alt="image" src="https://github.com/user-attachments/assets/3a736160-8913-40fd-a5ec-233de3937b2f" />
+
+<img width="873" height="622" alt="image" src="https://github.com/user-attachments/assets/04a3fa6c-fe18-482d-828d-77e1aa252678" />
+
+<br>
+
+
 # 4S 센서 설치 장소, 설치 방법, 데이터 수집 및 처리
 
 - 설치 장소: (벼)논
