@@ -56,8 +56,8 @@ Agricultural and forest meteorology, 264, 164-177. 2019
 
 # 4S
 <img width="484" height="354" alt="image" src="https://github.com/user-attachments/assets/3a736160-8913-40fd-a5ec-233de3937b2f" />
-
-<img width="873" height="622" alt="image" src="https://github.com/user-attachments/assets/04a3fa6c-fe18-482d-828d-77e1aa252678" />
+<br>
+<img width="500" height="355" alt="image" src="https://github.com/user-attachments/assets/04a3fa6c-fe18-482d-828d-77e1aa252678" />
 
 <br>
 
