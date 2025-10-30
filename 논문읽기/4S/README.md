@@ -101,7 +101,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
       
     - <img width="147" height="60" alt="image" src="https://github.com/user-attachments/assets/87772b39-f3c7-4c0a-9967-321d3e7fad85" />
     
-        - k: the extinction coefficient under diffuse sky conditions
+        - k: the extinction coefficient under diffuse sky conditions (소광계수)
         - &Omega;<sub>e</sub> : element clumping index  (식물 캐노피-덮개구조-의 잎이 얼마나 뭉쳐 있는지(군집화 정도)를 나타내는 지표
 
     - LED 센서로 얻은 전체 LAI를 녹색 LAI(LAI<sub>g</sub>)로 변환하기 위해 GI 계산
@@ -164,7 +164,64 @@ Agricultural and forest meteorology, 264, 164-177. 2019
     |MOD09GQ(MODIS Terra Surface Relection), MYD09GQ(MODIS Aqua Surface Relection products)|250m|매일|ideal quality, cloud free 등 특정 상태를 만족하는 이미지만 사용|
     |Landsat 8 reflectance products|30m|16일|구름으로 덮인 이미지는 제거|
     |Sentinel-2 Level 2A|10m|10일 (Level 2A: 대기 보정된 이미지)|구름으로 덮인 이미지는 제거|
+
+    <br>
     
+# Results and discussion
+
+- 종합 성능
+  
+  - 4S 시스템은 장마철을 포함하여 작물의 생장 기간(growing season) 내내 데이터를 안정적으로 수집할 수 있었음.(LED senser data 수집율: 76%, camera data 수집율: 80%, 번개나 침수, SD card 오동작 등이 데이터 수집의 방해 요인이었음)
+  - LED 센서: 온도 10 – 35°C , 습도 20 ~ 100% 사이에서 잘 동작함.
+  - Jaz spectrometer와 4S 시스템의 LED 센서 중 NIR 밴드의 값이 R<sup>2</sup> = 0.98 로 높은 선형 관계를 보였음.
+  
+    <img width="542" height="200" alt="image" src="https://github.com/user-attachments/assets/e34e0cd4-0114-45a4-9cd3-794abb0f7331" />
+
+- VI, fPAR 및 LAI의 계절적 변화
+
+  - VIs(NDVI, EVI), fPAR, LAI는 계절에 따라 뚜렷한 변화를 보이며, 식물의 생육 단계와 밀접한 관련이 있음. 즉, 이 지표들은 생장기(vegetation or growth stage), 생식기(reproductive stage), 등숙기(ripening or maturation stage) 등 작물의 생리적 변화를 반영함.
+
+  - VIs(NDVI, EVI): 4S LED sensors와 Jaz spectrometer는 재배 기간 동안 서로 잘 일치하는 VI 값을 생성했음 (R<sup>2</sup> = 0.96).
+
+    - 모종 시점(transplating date) 근처: 4S 시스템과 Jaz 분광기로 측정한 VIs 값들이 약간 차이가 발생함 -> 이는 공간적으로 이질적인 물의 탁도(논 물의 탁도가 위치마다 다름)에 기인한 것으로 가정함(assumed).
+    - 초기 생장기(after DOY 140): NDVI와 EVI가 급격히 증가하는 구간. 이는 잎이 빠르게 자라면서 녹색 면적이 늘어나기 때문.
+    - 생식기 ~ 등숙기(DOY 160 ~ 209): NDVI는 포화 상태에 도달해 거의 일정하게 유지되고, EVI는 NDVI보다 민감하게 계속 증가함.
+    - 등숙기 이후(DOY 209 and onward): 잎이 노랗게 변하고 이삭이 형성되면서 NDVI와 EVI가 모두 감소함. 이는 녹색 잎의 면적이 줄어들기 때문
+    - 수확 이후 (after DOY 248): NDVI와 EVI 모두 급격히 감소(sudden drop)
+      
+    <img width="520" height="400" alt="image" src="https://github.com/user-attachments/assets/d89953b3-df33-4b89-8b6a-78f66cd7bbc5" />
+
+  - 4S 시스템으로 측정한 fPAR 값과 LAI-2200장비로 측정한 fPAR 값과 크기(magnitude)와 계절적 변환(seasonal pattern)가 일치함.
+
+    - DOY 167 이전에는 벼의 키가 센서의 높이보다 낮았기 때문에 관측할 수 없었음.
+    - DOY 167에 센서 설치 직후에는 4S 시스템과 LAI-2200 장비로 측정한 fPAR 값이 서로 일치하지 않았는데, 이는 두 장비의 방법론적 차이에 기인한 것으로 풀이됨. (LAI-2200은 25개 이상의 무작의 지점에서 측정한 반면, 4S 시스템은 3개 지점에 고정 설치되었기 때문)
+    - 그러나, DOY 180 이후에는 두 장비의 fPAR 값이 서로 일치하였음.
+    
+    <img width="1065" height="420" alt="image" src="https://github.com/user-attachments/assets/71b78fc7-9826-405e-9c18-473282721e27" />
+
+
+  - 4S LAI, LAI<sub>g</sub>도 크기(magnitude)와 계절적 변화(seasonal pattern) 관점에서 LAI 기준 값과 유사함을 보였음.
+ 
+    - 4S 시스템으로 측정한 LAI는 LAI-2200 장비로 측정한 LAI와 가장 높은 상관관계(R² = 0.71)를 보임.
+      <br>
+      <br>
+      - 소광계수(k)와 클럼핑 지수(&Omega;<sub>e</sub>)를 생장기 내내 일정하다고 가정하였으나, 이 가정이 4S 시스템으로 계산한 LAI 값에 편향(bias)을 초래할 수도 있었을 것으로 추정됨.(이전 연구에 따르면 벼의 생육 단계에 따라 잎의 각도 분포가 달라지면서, 소광계수(k)도 변화한다고 보고되었고, 클럼핑 지수도 이식 시점부터 생장기 절정까지는 점차 감소하고, 수확 직전에는 다시 증가하는 경향을 보인다고 하였음)
+      - 실제로 DOY 200(연중 200일 째, 대략 7월 중순)까지는 4S LAI 값이 다른 기준(reference) LAI 값보다 낮게 나오는 경향이 있었음.
+      - <b>계절적으로 변하는 소광계수(k)와 클럼핑 지수(&Omega;<sub>e</sub>)는 4S 시스템으로 계산한 LAI 값에 상당한 영향을 줄 수 있지만, 현재의 4S 시스템으로는 그 변화를 감지하거나 반영할 수 없었다고 함.</b>
+ 
+      
+    <img width="773" height="313" alt="image" src="https://github.com/user-attachments/assets/7eb7d42f-fd29-4d4a-8fef-beb978a5d007" />
+
+<br>
+<br>
+
+- 위성 원격 감지 데이터 평가에 대한 의미:
+
+  
+
+<br>
+
+<hr>
 
 # 추가 내용
 
