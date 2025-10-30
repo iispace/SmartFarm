@@ -215,7 +215,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
       - <b>계절적으로 변하는 소광계수(k)와 클럼핑 지수(&Omega;<sub>e</sub>)는 4S 시스템으로 계산한 LAI 값에 상당한 영향을 줄 수 있지만, 현재의 4S 시스템으로는 그 변화를 감지하거나 반영할 수 없었다고 함.</b>
  
       
-    <img width="773" height="313" alt="image" src="https://github.com/user-attachments/assets/7eb7d42f-fd29-4d4a-8fef-beb978a5d007" />
+    <img width="864" height="350" alt="image" src="https://github.com/user-attachments/assets/7eb7d42f-fd29-4d4a-8fef-beb978a5d007" />
 
 <br>
 <br>
