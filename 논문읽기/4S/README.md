@@ -141,7 +141,20 @@ Agricultural and forest meteorology, 264, 164-177. 2019
       - Jaz 분광기로 측정한 스펙트럼 반사율 데이터를 1분 간격으로 저장.
       - 태양 고도가 높고 그림자 영향이 가장 적은 정오에 측정된 Jaz 데이터만 사용해 NDVI와 EVI 계산
 
+  - LAI와 fPAR 데이터
+ 
+    - LAI-2200 Plant Canopy Analyzer 장비 사용: 2주 간격으로 정오(noontime)에 25개 이상의 임의 포인트(논의 특정 지점)에서 데이터 수집
+    - 캐노피 위에서 입사광과 반사광, 캐노피 아래에서 투과광을 각각 측정
+    - LAI-2200은 서로 다른 시야각(7°, 23°, 38°, 53°, 68°)을 가진 5개의 링(ring)으로 구성. 각 링은 특정 각도에서 들어오는 빛을 감지하며, 넓은 각도일수록 더 많은 하늘을 볼 수 있음.
+   
+    - <img width="275" height="51" alt="image" src="https://github.com/user-attachments/assets/2a0627c7-0341-4c4a-abf3-ceadbf46d022" />
+ 
+    - LAI with scattering correction: LAI-2200 장비로 수집한 데이터를 기반으로 FV2200 software를 사용하여 계산함.
+   
+    <img width="231" height="293" alt="image" src="https://github.com/user-attachments/assets/3456078f-7815-4d6e-9236-33cc26326bed" />
 
+
+      
 
 # 추가 내용
 
