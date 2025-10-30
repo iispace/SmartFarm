@@ -141,7 +141,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
       - Jaz 분광기로 측정한 스펙트럼 반사율 데이터를 1분 간격으로 저장.
       - 태양 고도가 높고 그림자 영향이 가장 적은 정오에 측정된 Jaz 데이터만 사용해 NDVI와 EVI 계산
      
-        <img width="456" height="400" alt="image" src="https://github.com/user-attachments/assets/beb5f2d0-0559-456a-89ca-9c04c2802273" />
+        <img width="342" height="300" alt="image" src="https://github.com/user-attachments/assets/beb5f2d0-0559-456a-89ca-9c04c2802273" />
         
         [그림 출처](https://www.mdpi.com/2311-7524/10/8/828)
 
