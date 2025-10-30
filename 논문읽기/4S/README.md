@@ -70,7 +70,7 @@ Agricultural and forest meteorology, 264, 164-177. 2019
   <img width="529" height="744" alt="image" src="https://github.com/user-attachments/assets/5bda8786-5ecf-4a93-a14a-aaee1c02a999" />
 </div>
 
-- 데이터 수집 및 처리:
+- 실험 데이터 수집 및 처리:
 
     - 위쪽과 아랫쪽에 설치한 센서의 값을 비교하여 반사율(&rho;) 계산(Spectral Reflectance)
         - 위쪽 센서: 하늘에서 들어오는 빛(입사광) 측정
@@ -94,18 +94,48 @@ Agricultural and forest meteorology, 264, 164-177. 2019
         - 입사광과 반사광은 NDVI 및 EVI를 측정하던 동일한 3개의 붐(지지대)에서 모니터링되었고, 간헐적으로 관개되는 논에서 투과광을 측정하기 위해서는 LED 센서를 각 4S 시스템과 함께 스티로폼 부표에 고정하여, 수위에 따라 수직으로 움직이는 정사각형 철제 프레임 안에 설치
         - <img width="306" height="56" alt="image" src="https://github.com/user-attachments/assets/fbb5ab40-da68-483a-aae4-2b86b9afe3ef" />
         
-    - LAI 계산: 캐노피 위와 아래에 설치된 LED 센서의 블루 밴드를 통해 입사 스펙트럼 복사조도 값(spectral irradiance)을 측정하여 Gap Fraction(GF) 계산 (캐노피의 산란 효과를 최소화하기 위해 블루 밴드 사용. 파란색 빛은 식물 캐노피에서 산란이 가장 적은 파장대임. 적색이나 근적외선 등 다른 파장대는 잎에 의해 산란되거나 흡수되기가 더 쉬워서 정확한 광 트과 측정이 어려움)
-    - <img width="325" height="65" alt="image" src="https://github.com/user-attachments/assets/0918942f-32f8-4c72-9a9c-b61c117fa189" />
+    - LAI 계산: 캐노피 위와 아래에 설치된 LED 센서의 블루 밴드를 통해 입사 스펙트럼 복사조도 값(spectral irradiance)을 측정하여 Gap Fraction(GF) 계산 (캐노피의 산란 효과를 최소화하기 위해 블루 밴드 사용. 파란색 빛은 식물 캐노피에서 산란이 가장 적은 파장대임. 적색이나 근적외선 등 다른 파장대는 잎에 의해 산란되거나 흡수되기가 더 쉬워서 정확한 광 투과량 측정이 어려움)
+    - <img width="325" height="65" alt="image" src="https://github.com/user-attachments/assets/0918942f-32f8-4c72-9a9c-b61c117fa189" /> (GF는 쉽게 말해서 식물 잎 사이로 하늘이 보이는 비율)
 
+    - &Omega;<sub>e</sub> = 평균 ln(GF(&theta;)) / 실제 ln(GF(&theta;))  (식물의 잎이 균일하게 퍼져 있지 않으면, 측정 위치에 따라 광 투과량이 달라지고 LAI 계산이 부정확해질 수 있으므로, &Omega;<sub>e</sub>를 통해 잎의 뭉침 정도를 보정해 주는 것이 필요)
+      
     - <img width="147" height="60" alt="image" src="https://github.com/user-attachments/assets/87772b39-f3c7-4c0a-9967-321d3e7fad85" />
     
         - k: the extinction coefficient under diffuse sky conditions
         - &Omega;<sub>e</sub> : element clumping index  (식물 캐노피-덮개구조-의 잎이 얼마나 뭉쳐 있는지(군집화 정도)를 나타내는 지표
-        - 
+
+    - LED 센서로 얻은 전체 LAI를 녹색 LAI(LAI<sub>g</sub>)로 변환하기 위해 GI 계산
+      
+      - GI(Greenness Index): 디지털 이미지에서 녹색 성분의 상대적인 비율을 나타내는 지표. 식물의 생육 상태나 잎의 녹색 정도를 파악하는 데 사용되며, 특히 녹색 잎 면적(Green LAI)를 추정할 때 유용한 값. 
         
+        <img width="195" height="52" alt="image" src="https://github.com/user-attachments/assets/b4bb4dfc-09ff-4d96-90eb-dc98c0350d97" />
 
+          - DN<sub>r</sub>, DN<sub>g</sub>, DN<sub>b</sub>: 각각 이미지의 빨강(R), 초록(G), 파랑(B) 채널의 디지털 숫자(Digital Number)
+       
+      - <img width="208" height="32" alt="image" src="https://github.com/user-attachments/assets/74717399-f091-40f7-8bb0-c56ff1cfd9a5" />
 
-  
+ <br>
+ <br>
+
+- 참조(기준) 데이터 수집 및 처리:
+
+      - LAI, DN<sub>r</sub> (LAI<sub>g</sub>) 데이터:
+
+          - 샘플링된 6개의 rice hills 중에서 3개의 rice hills에서 잎을 스캔(화이트보드에 붙이고 스캐너로 스캔, 300 dpi in JPEG)
+
+              - 녹색 잎과 노란 잎은 파란색 반사율이 다르므로, 스캔 이미지로부터 파랑 채널(Blue channel)을 추출해 녹색 잎과 노란 잎을 구분.
+
+              - 스캔 이미지에서 파랑 채널을 시각화하고, 임계값(threshold)를 적절히 설정하여 잎의 색상을 녹색과 노란색으로 구분한 후, 녹색 잎의 비율을 구함.
+
+          - 나머지 3개의 rice hills는 80°C에서 48시간 동안 건조한 후, 잎 무게를 측정해 단위 면적당 잎 질량으로 LAI 계산 (LAI<sub>t</sub>)
+
+          - 앞서, 스캔 이미지 분석으로 얻은 녹색 잎의 비율을 건조 샘플에 적용해 녹색 LAI(LAI<sub>g</sub>) 추정
+
+          - 전체 잎에서 이삭이 차지하는 면적도 고려하기 위해 이삭 무게(graint weight)와 이삭의 반쪽 표면적(hemi-surface grain area)도 보조 지표로 측정
+
+        - VIs 데이터
+
+          - Jaz 분광기로 측정한 스펙트럼 반사율 데이터 활용해 NDVI와 EVI 계산
 
 # 추가 내용
 
