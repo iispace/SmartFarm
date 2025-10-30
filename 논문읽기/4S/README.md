@@ -154,7 +154,17 @@ Agricultural and forest meteorology, 264, 164-177. 2019
     <img width="231" height="293" alt="image" src="https://github.com/user-attachments/assets/3456078f-7815-4d6e-9236-33cc26326bed" />
 
 
-      
+- 위성 원격 센싱 데이터:
+
+  - 필드 관측 결과를 MODIS Terra, MODIS Aqua, Landsat 8, SEntinel-2 Level 2A 위성 데이터와 비교함.
+  - 이 위성 데이터들은 서로 다른 공간 해상도를 가지고 있음.
+    
+    |위성 데이터|공간 해상도| 촬영 주기|기타|
+    | :-: | :-: | :-: | :-: |
+    |MOD09GQ(MODIS Terra Surface Relection), MYD09GQ(MODIS Aqua Surface Relection products)|250m|매일|ideal quality, cloud free 등 특정 상태를 만족하는 이미지만 사용|
+    |Landsat 8 reflectance products|30m|16일|구름으로 덮인 이미지는 제거|
+    |Sentinel-2 Level 2A|10m|10일 (Level 2A: 대기 보정된 이미지)|구름으로 덮인 이미지는 제거|
+    
 
 # 추가 내용
 
