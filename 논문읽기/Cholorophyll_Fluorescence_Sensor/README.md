@@ -1,7 +1,9 @@
 # 제목
-<b>Uncovering the importance of spatiotemporal resolution in satellite-based rice yield estimation using a simple but effective proxy</b>
+<b>Development of a filter-based near-surface remote sensing system to retrieve far-red sun-induced chlorophyll fluorescence</b>
+
+[Github](https://github.com/Kinznice/4S-SIF)
+
 <br>
-[Github](#)
 
 # 저자
 Juwon Kong, Youngryel Ryu, Benjamin Dechant, Sungchan Jeong, Jongmin Kim, Kyungdo Lee, Bonil Ku, Rasmus Houborg
