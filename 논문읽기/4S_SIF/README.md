@@ -1,5 +1,5 @@
 # 제목
-<b>Development of a filter-based near-surface remote sensing system to retrieve far-red sun-induced chlorophyll fluorescence</b>
+<b>[Development of a filter-based near-surface remote sensing system to retrieve far-red sun-induced chlorophyll fluorescence](https://www.sciencedirect.com/science/article/pii/S0034425722004175)</b>
 
 [Github](https://github.com/Kinznice/4S-SIF)
 
@@ -96,3 +96,11 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
     - 특정 파장에서의 전자기 복사 에너지를 정량화하기 위해, 포토다이오드를 광센서 증폭기에 연결함. 실리콘 포토다이오드가 광자(빛 입자)를 포착하면 신호가 생성되고, 이 신호는 광센서 증폭기에 의해 증폭됨. 증폭기는 아날로그 신호를 디지털 숫자(DN)로 변환하며, 이 DN값을 마이크로컴퓨터(라즈베리파이)에 텍스트 파일로 저장.
    
 ## 
+
+<br>
+
+<hr>
+
+참고문헌
+
+[] [Supplementary Material](https://www.sciencedirect.com/science/article/pii/S0034425722004175#ec0005)
