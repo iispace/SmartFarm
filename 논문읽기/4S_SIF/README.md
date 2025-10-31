@@ -31,7 +31,7 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 |Optical Density(OD, 광학 밀도)|필터가 빛을 얼마나 잘 차단하는지를 수치로 나타낸 값. <br> - 필터에 들어오는 빛의 세기(입사광)을 필터를 통과한 빛의 세기(투과광)으로 나눈 값에 로그를 취한 값.<br> - OD=4이면 10<sup>4</sup>배 차단 효과가 있음. 즉, 0.01%만 통과하고 나머지 99.99%는 차단된다는 의미|
 |Dark Current(암전류)|빛이 없는 상태에서도 센서(포토다이오드)가 발생시키는 전류. 즉, 광원이 없는데도 센서가 '신호'처럼 반응하는 배경 노이즈. 이는 센서 내부의 열, 전자 이동, 회로 잡음 등 물리적 요인으로 인해 발생함.|
 |Collimating Lens(집광 렌즈)|빛의 방향을 평행하기 정렬(collimate)해주는 렌즈. 산란된 빛을 한 방향으로 모아주어 센서에 더 많은 광자가 도달하게 함.<br> - 필터에 수직으로 입사하는 빛만 통과하도록 유도하여 파장의 정확도를 향상시킴.<br> - 렌즈가 빛을 모아줌으로써 포토다이오드에 더 많은 빛이 도달하게 함. 이는 신호의 세기를 증가시켜 줌.|
-
+|SCOPE 모델|Soil Canopy Observation of Photosynthesis and Energy<br> - 식물의 광합성, 형광, 에너지 흐름을 시뮬레이션하는 모델<br> - 입력값으로 기상 조건, 식생 구조, 광학 특성 등을 넣으면 형광 방출 스펙트럼을 계산해 줌.|
 
 ## 왜 지상 기반 (near-surface) SIF 연구가 필요한가?
 
@@ -79,6 +79,9 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
   - 서보 모터로 휠을 회전시킬 수 있게 하여, 하나의 포토다이오드로 암전류와 3개의 초협대역 필터를 통해 들어오는 빛을 각각 측정할 수 있도록 설계함.
   - 초협대역 밴드패스 필터와 포토다이오드 사이에 집광 렌즈(Collimating lens) 설치 => 포토다이오드에 도달하는 광자 수를 늘리고, 필터에 수직으로 입사사는 빛만 측정되도록 하기 위함.
     - 밴드패스 필터는 입사각에 따라 투과 파장이 달라질 수 있음: 빛이 비스듬히 들어오면 파장이 짧아지는 "블루 시프트" 현상 발생. 따라서, 수직 입사(orthogonal incidence)를 유지해야 정확한 파장대의 빛만 통과시킬 수 있음.
+
+      <img width="552" height="400" alt="image" src="https://github.com/user-attachments/assets/bd4a544a-e0b7-4ff6-9e03-9c6ce5d25556" />
+
     - 센서 내부와 외부의 공기를 순환시키기 위해 두 개의 팬도 함께 설치(하나는 외부 공기를 센서로 끌어들이고, 다른 하나는 센서의 공기를 외부로 배출): 센서 내부의 온도와 습도는 광학 측정에 큰 영향을 미칠 수 있으므로, 팬을 통해 센서 내부의 공기 흐름을 만들어 내부 환경을 쾌적하게 유지(온도를 낮추고, 습기도 제거하는 효과)하고, 센서의 측정 정확도를 높이기 위함.
     - 그 밖에 온습도 센서(DHT22)도 추가하고, 측정 데이터가 저장되도록 함.
 
@@ -88,6 +91,7 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
       <img width="372" height="300" alt="image" src="https://github.com/user-attachments/assets/26f31784-cb71-4696-b7b9-a2b3a77977c2" />
       <img width="366" height="300" alt="image" src="https://github.com/user-attachments/assets/17532e3c-3f46-468f-8533-c3c210a7f3e2" />
 
+      <img width="965" height="500" alt="image" src="https://github.com/user-attachments/assets/110b8675-91bc-415c-a194-0583458a580c" />
 
     - 특정 파장에서의 전자기 복사 에너지를 정량화하기 위해, 포토다이오드를 광센서 증폭기에 연결함. 실리콘 포토다이오드가 광자(빛 입자)를 포착하면 신호가 생성되고, 이 신호는 광센서 증폭기에 의해 증폭됨. 증폭기는 아날로그 신호를 디지털 숫자(DN)로 변환하며, 이 DN값을 마이크로컴퓨터(라즈베리파이)에 텍스트 파일로 저장.
    
