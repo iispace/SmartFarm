@@ -32,6 +32,9 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 |Dark Current(암전류)|빛이 없는 상태에서도 센서(포토다이오드)가 발생시키는 전류. 즉, 광원이 없는데도 센서가 '신호'처럼 반응하는 배경 노이즈. 이는 센서 내부의 열, 전자 이동, 회로 잡음 등 물리적 요인으로 인해 발생함.|
 |Collimating Lens(집광 렌즈)|빛의 방향을 평행하기 정렬(collimate)해주는 렌즈. 산란된 빛을 한 방향으로 모아주어 센서에 더 많은 광자가 도달하게 함.<br> - 필터에 수직으로 입사하는 빛만 통과하도록 유도하여 파장의 정확도를 향상시킴.<br> - 렌즈가 빛을 모아줌으로써 포토다이오드에 더 많은 빛이 도달하게 함. 이는 신호의 세기를 증가시켜 줌.|
 |SCOPE 모델|Soil Canopy Observation of Photosynthesis and Energy<br> - 식물의 광합성, 형광, 에너지 흐름을 시뮬레이션하는 모델<br> - 입력값으로 기상 조건, 식생 구조, 광학 특성 등을 넣으면 형광 방출 스펙트럼을 계산해 줌.|
+|Reflection Shape Effect(반사율 형태 효과)|식물이나 표면의 반사율 스펙트럼 곡선의 형태(shape)가 SIF 추출에 영향을 주는 현상|
+
+<br>
 
 ## 왜 지상 기반 (near-surface) SIF 연구가 필요한가?
 
@@ -40,6 +43,8 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 - 식물 종류, 생육 단계, 스트레스 상태 등은 위성만으로는 구분하기 어려워, 현장 데이터가 필수적임
 - SIF-GPP 관계를 설명하는 생태 모델을 개선하려면 실제 지상에서 관측한 값이 필요함.
 - 즉, 위성으로 식물의 생산성을 넓게 관측할 수는 있으나, 그 정확성과 의미를 제대로 이해하려면 지상에서 직접 측정한 SIF 데이터가 더 많이 필요함.
+
+<br>
 
 ## 기존 지상 기반 SIF 시스템의 한계
 
@@ -51,6 +56,8 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
   - SIF는 757nm 및 760.7nm와 같은 몇 개의 매우 좁은 파장대만 관측함으로써 추출할 수 있음.
   - SIF는 식물이 광합성 중 방출하는 미세한 빛인데, 이 빛은 태양광에 섞여 있기 때문에 직접적으로 측정하기 어렵다. 하지만, O₂A 밴드에서는 태양광이 산소에 의해 흡수되어 줄어들기 때문에, 그 틈을 통해 식물에서 방출되는 형광 신호(SIF)를 상대적으로 더 쉽게 감지할 수 있는 것.
 
+<br>
+
 ## 제안 (가설)
 
 - 현장(field)에서 SIF를 모니터링할 때 발생하는 기술적 어려움을 극복하고, 센서 비용을 낮춰 보다 넓은 공간에서 효율적으로데이터를 수집할 수 있도록 설계된 필터 기반의 스마트 근접 원격탐사 시스템(4S-SIF)를 제안함.
@@ -59,6 +66,7 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
   - 4S-SIF 개발 방법 설명
   - 기준 장비인 상업용 초분광 분광복사계(hyperspectral spectroradiometer)를 이용하여 4S-SIF 성능 평가
   - 제초제 처리로 인해 SIF 수준이 빠르게 변화하는 실제 야외 환경에서, 4S-SIF 시스템이 SIF를 얼마나 정확하게 추출하는지를 기준 장비와 비교하여 평가
+
 <br>
 
 #  Materials and methods
@@ -199,8 +207,49 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 ## 4S-SIF 센서의 온도 반응
 
 - 초협대역 대역통과 필터의 온도 안정성을 평가하기 위한 실험
-- 
+- 야외 환경에서는 온도가 지속적으로 변하기 때문에, 필터의 온도에 따른 성능 변화(투과율 변화)를 확인할 필요가 있음.
+- 특히 SIF(태양 유도 엽록소 형광) 측정에 사용되는 초협대혁 필터는 파장 정확도가 매우 중요하기 때문에, 온도에 따른 파장 이동(wavelength shift)을 정량적으로 분석해야 함.
+
+- 실험 구성:
+  - 온도 제어 박스 사용
+    - 필터, 광원, 온도 센서(HMP 155)를 온도 제어 박스에 넣고, 15°C ~ 45°C까지 0.2°C 간격으로 온도를 변화시킴
+  
+  - 측정 방식
+    - 기준 분광복사계는 실온에 위치 시키고, 광섬유 팁(fiber tip)만 온도 박스 내부에 삽입하여 필터를 통과한 빛을 측정할 수 있도록 함)
+    - 1분 간격으로 온도와 스펙트럼 데이터 기록
+
+  - 측정 결과
+    - 온도가 상승함에 따라 필터의 중심 파장(peak wavelength)가 전체 투과 곡선(transmittance curve)이 긴 파장 쪽으로 이동함.
+      - 이는 온도에 따라 필터의 광학 특성이 변한다는 것을 의미함.
+      - 특히 770 nm 필터는 온도에 매우 민감하게 반응함.
+        - 757 nm, 761 nm 필터보다 투과율 변화가 더 큼
+        - 이는 제조사가 다르기 때문에, 사용된 소재(materials)가 다를 가능성이 있음.
       
+  - 초협대역 대역통과 필터의 온도 변화가 SIF(태양 유도 엽록소 형광) 추출에 미치는 영향 검증
+    - 기준 분광복사계를 통해 현장에서 측정한 입사 스펙트럼 데이터에 복사 보정 적용
+    - 입사 스펙트럼에 반사율(reflectance)를 곱하여 반사광 계산 (여기서 반사율은 0.5로 고정하고, 파장에 관계없이 일정하다고 가정함)
+      - 이렇게 하면, 반사율 형태 효과(reflection shape effect)에 의한 영향을 제거하고,
+      - 온도에 따른 필터의 투과율 변화만 정량화할 수 있음
+    - 또한, 실제 식물에서 방출되는 엽록소 형광 스펙트럼을 반사광에 추가해 줌
+    - 이 형광 스펙트럼은 현장에서 측정된 실제 데이터 사용
+    - 이렇게 하면 온도 변화가 필터를 통해 측정되는 형광 신호에 어떤 영향을 주는지 평가할 수 있음.
+    - 포토다이오드는 파장에 따라 빛에 대한 민감도가 다르므로, 제조사로부터 받은 파장별 감도 곡선(photosensitivity curve)를 기준 장비가 측정한 입사 및 출사 복사량에 곱하여 4S-SIF 센서의 빛 감지 민감도와 맞춰줌.
+    - 앞서 온도 민감도 실험에서 얻은 필터의 온도별 투과율 변화 데이터를 입사 및 출사 복사량에 적용.
+    - 위에서 보정된 복사량 데이터를 기반으로 3FLD 방식 (Equ.1,2)을 사용해 SIF 시뮬레이션 값 계산
+      - 3개의 파장("in-band"와 2개의 "out-band")을 활용하여 형광 신호 계산
+
+  - 시뮬레이션 결과
+    - 온도가 상승하면 SIF 추출값은 감소함. 시뮬레이션 데이터를 기반으로 온도와 SIF 사이의 선형 회귀 분석 수행
+
+      <img width="529" height="468" alt="image" src="https://github.com/user-attachments/assets/a889f5b6-c622-40a7-82f2-c410284ca53b" />
+
+## 4S-SIF 센서 현장 실험
+
+<img width="880" height="762" alt="image" src="https://github.com/user-attachments/assets/d4295266-d30e-4bd8-a349-944518e7046a" />
+
+### Data collection and filtering in 4S-SIF
+
+
 
 
 <br>
