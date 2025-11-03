@@ -95,8 +95,59 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 
     - 특정 파장에서의 전자기 복사 에너지를 정량화하기 위해, 포토다이오드를 광센서 증폭기에 연결함. 실리콘 포토다이오드가 광자(빛 입자)를 포착하면 신호가 생성되고, 이 신호는 광센서 증폭기에 의해 증폭됨. 증폭기는 아날로그 신호를 디지털 숫자(DN)로 변환하며, 이 DN값을 마이크로컴퓨터(라즈베리파이)에 텍스트 파일로 저장.
    
-## 
+<br>
 
+## 초협대역 대역통과 필터(Ultral-narrow bandpass filter)의 성능
+
+- 태양 유도 엽록소 형광(SIF)을 FLD(Fraunhofer Line Depth) 기법으로 추출할 때, 초협대역 필터의 정확한 사양이 매우 중요하므로 아래의 기준 장비를 이용하여 성능을 검증함.
+- 초협대역 대역통과 필터의 성능 검증 장비:
+  
+    - 광원: HL-2000-CAL, Ocean Insight, USA
+    - 초분광 분광복사계: QE Pro, Ocean Insight (스펙트럼 범위 730 - 790nm,  해상도 0.17nm, 샘플링 간격: 0.07nm
+      
+    <img width="642" height="296" alt="image" src="https://github.com/user-attachments/assets/b16e3a7b-51fd-4baa-b3ad-ea9752a1021a" />
+
+- 성능 실험 구성:
+  - 광원, 확산판(diffuser), 초협대역 대역통과 필터, 집광 렌즈(collimating lens)를 일렬로 정렬
+  - 광섬유를 통해 기준 분광복사계와 연결
+  - 어두운 실험실에서 측정 진행
+    
+    <img width="596" height="618" alt="image" src="https://github.com/user-attachments/assets/4f512c64-35d8-4998-bcf4-148a669aaf0e" />
+
+- 투과율 측정 방법:
+  - 필터가 있을 때와 없을 때 빛의 세기를 비교하여 투과율(transmittance) 계산
+  - 필터의 FWHM(Full Width Half Maximum)은 약 1nm
+  - 중심 파장은 각각 757.7 nm, 760.6 nm, 770 nm
+ 
+- 4S-SIF 센서의 파장 응답 검증
+  - 센서 전체(하우징과 확산판 포함)가 필터의 파장에 제대로 반응하는지 확인
+  - 단일 파장 광원(monochromator)을 사용해 1nm 간격으로 조사
+  - 4S-SIF 센서의 응답이 필터의 투과 특성과 일치하는지 확인
+
+    <img width="1218" height="541" alt="image" src="https://github.com/user-attachments/assets/398de449-dfab-44af-9501-dd5ac5fc8414" />
+
+- 초협대역 대역통과 필터의 SIF 추출 성능을 시뮬레이션으로 검증 (필터의 성능을 다각도로 평가하기 위해 추가한 검증)
+  - SIF(태양 유도 엽록소 형광)은 반사광과 식물 자체에서 방출하는 형광 신호를 모두 포함.
+  - 반사광은 PROSAIL 모델을 이용하여 시뮬레이션한 반사율과 기준 분광복사계를 이용해 현장에서 측정한 입사 복사량을 이용하여 구하고, 식물 방출 형광 신호는 SCOPE라는 모델로 시뮬레이션하여 구함.
+  - 반사광 계산
+    - 기준 분광복사계를 이용해여 현장에서 측정한 입사 복사 스펙트럼 데이터에 반사율(reflectance)을 곱하여 출사 복사량(식물에서 반사된 빛, 반사광) 계산.
+    - 여기서 반사율은 실제 측정값이 아닌 모델(PROSAIL)을 통해 시뮬레이션한 값.
+    - 사용 모델: PROSAIL(PROSPECT(잎의 생화학적 특성) + SAIL(수관 구조 및 광 전달))
+  - 식물 자체 방출 형광 스펙트럼 곡선 계산
+    - 사용 모델: SCOPE(Soil Canopy Observation of Photosynthesis and Energy), 식물의 광합성, 에너지 흐름, 형광 방출을 시뮬레이션하는 물기 기반 모델
+    - SCOPE는 엽록소 형광의 스펙트럼 곡선(파장별 형광 세기)을 생성할 수 있는 모델임.
+      
+  
+  <img width="559" height="150" alt="image" src="https://github.com/user-attachments/assets/72682e2c-6463-415f-a93f-ff36723ba042" />
+  <img width="517" height="686" alt="image" src="https://github.com/user-attachments/assets/92d9cb9a-8085-4573-b24d-b545467a1209" />
+
+  - 3FLD(trans applied) 방식은 실제 필터의 투과 특성을 반영하여 SIF를 추출하지만, 이 방식으로 얻은 SIF 값이 3FLD(one pixel 즉, 기준 분광복사계의 스펙트럼 데이터를 직접 활용하여 측정한 방식)의 값보다 낮게 측정됨.
+  - 이는 필터 기반 방식이 더 넓은 파장의 범위를 포함하게 때문에, 형광 신호 외에 주변 스펙트럼의 영향을 더 많이 받을 수 있고, 이루 인해 추출된 SIF의 크기가 달라진 것으로 해석됨. (파장 범위에 따라 SIF 추출값이 달라질 수 있다는 것을 보고한 선행 연구도 있음)
+  - 따라서, 3FLD(trans applied)와 3FLD(one pixel) 두 방식의 SIF 값 사이의 관계식을 선형 회귀 모델로 분석하여 도출하고, 이를 이용하여 3FLD(trans applied) 방식으로 추출한 SIF 값의 크기를 보정함.
+
+    <img width="883" height="500" alt="image" src="https://github.com/user-attachments/assets/c91d7888-7b29-4acc-a309-5dc778ba6c25" />
+
+  
 <br>
 
 <hr>
