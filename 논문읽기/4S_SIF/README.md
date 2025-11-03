@@ -21,6 +21,7 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 |용어|설명|
 |:-|:-|
 |SIF|태양광 유도 엽록소 형광, 식물에서 방출되는 형광 신호|
+|SIF Yield|식물 캐노피 수준에서 엽록소 형광(SIF)의 효율<br> - 절대적인 SIF의 크기와 무관하며, SIF가 NIRv × PAR에 비해 상대적으로 얼마나 큰지가 중요함.<br> - 식물이 받은 빛과 식물량 대비 얼마나 형광을 방출했는지를 나타내는 비율 지표<br> - SIF Yield가 높으면 광합성에 사용된 에너지 대비 형광 방출이 많다는 것이며, 이는 광합성 효율 저하 또는 스트레스 반응일 수 있음.|
 |Plant functional types(식물 기능형)|식물 종(species)이 아니라, 기능적 특성(functional traits)에 따라 식물을 분류하는 방식 <br> - C3 작물: 쌀, 밀 등 일반적인 광합성 경로 사용 작물 <br> - C4 작물: 옥수수, 사탕수수 등 고온.강광 환경에 적응한 작물 <br> - CAM: 선인장, 다육식물 등 밤에 CO<sub>2</sub>를 흡수하는 식물|
 |gross primary production (GPP)|식물이나 조류 같은 광합성 생물들이 태양 에너지를 이용해 CO<sub>2</sub>를 유기물로 전환하는 총량. 즉, 광합성을 통해 생성된 총 에너지 또는 탄소량<br>GPP는 대기 중 CO<sub>2</sub> 흡수량을 나타내므로 탄소 순환을 이해하는 데 핵심 지표임<br>GPP가 높다는 것은 식생이 활발히 성장하고 있다는 의미 |
 |Vegetation phenology|식생의 생물계절학. 식물의 생장과 계절적 변화 과정을 연구하는 분야<br> - 발아(Germination)<br> - 잎 발달(Leaf-out)<br> - 개화(Flowering)<br> - 결실(Fruiting)<br> - 낙엽(Leaf senescence) 등의 항목 관찰|
@@ -33,6 +34,7 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 |Collimating Lens(집광 렌즈)|빛의 방향을 평행하기 정렬(collimate)해주는 렌즈. 산란된 빛을 한 방향으로 모아주어 센서에 더 많은 광자가 도달하게 함.<br> - 필터에 수직으로 입사하는 빛만 통과하도록 유도하여 파장의 정확도를 향상시킴.<br> - 렌즈가 빛을 모아줌으로써 포토다이오드에 더 많은 빛이 도달하게 함. 이는 신호의 세기를 증가시켜 줌.|
 |SCOPE 모델|Soil Canopy Observation of Photosynthesis and Energy<br> - 식물의 광합성, 형광, 에너지 흐름을 시뮬레이션하는 모델<br> - 입력값으로 기상 조건, 식생 구조, 광학 특성 등을 넣으면 형광 방출 스펙트럼을 계산해 줌.|
 |Reflection Shape Effect(반사율 형태 효과)|식물이나 표면의 반사율 스펙트럼 곡선의 형태(shape)가 SIF 추출에 영향을 주는 현상|
+
 
 <br>
 
@@ -243,14 +245,57 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 
       <img width="529" height="468" alt="image" src="https://github.com/user-attachments/assets/a889f5b6-c622-40a7-82f2-c410284ca53b" />
 
+<br>
+
 ## 4S-SIF 센서 현장 실험
 
-<img width="880" height="762" alt="image" src="https://github.com/user-attachments/assets/d4295266-d30e-4bd8-a349-944518e7046a" />
+<img width="690" height="600" alt="image" src="https://github.com/user-attachments/assets/d4295266-d30e-4bd8-a349-944518e7046a" />
+
+<br>
 
 ### Data collection and filtering in 4S-SIF
 
+- Geared motor로 센서 방향 전환(상향 및 하향 복사량 측정용 방향 전환)
+- 1분 간격으로 초협대역 대역통과 필터(757nm, 761nm, 770nm)별로 약 40개의 데이터 포인트(DN 값) 수집
+- 수집된 데이터 중에서 불안정한 것은 버리고(예: 모터 동작 중에 수집된 데이터는 버림) 선택된 데이터로 히스토크램 구성, 표준편차 계산
+- 히스토그램에서 빈도수가 가장 많은 구간(peak count)을 중심으로,
+  - +/-20% 표준편차 범위 내의 값만 추가로 선택 (센서의 정상적인 응답 범위만 유지하기 위한 필터링)
+- 이상값 제거(Hampel 필터)
+  - +/-20% 표준편차 범위 내의 값만 선택했어도 여전히 남아있는 이상값(outlier)을 제거하기 위함.
+  - 중앙값 절대편차(Median Absolute Deviation, MAD)와 표준편차를 기반으로 이상값 탐지
+  - 30개 데이터 포인트마다(window length of 30 data points), +/-3 표준편차를 벗어나는 값은 이상값으로 간주하여 제거함.
+  - MATLAB의 'hampel'함수 사용.
+  - 대부분의 이상값은 상향/하향 복사량을 반갈아 측정하는 동안 하늘의 광량이 급격히 변하는 흐린 날에 발생하였음.
 
+<br>
 
+### Retrieval of the SIF and vegetation index (SIF과 식생 지수 추출)
+
+- 온도 25 ◦C에서 기준 분광복사계와 4S-SIF으로 SIF 추출
+- 식물 캐노피 수준에서 엽록소 형광(SIF)의 효율, 즉 SIF yield 계산
+- SIF Yield는 단순히 형광의 절대량이 아니라, 식물이 받은 빛(PAR)과 식물량(NIRv)에 비해 얼마나 형광을 방출했는지를 나타냄. 즉, 형광 효율을 나타내는 지표로서, 식물의 광합성 상태나 스트레스 반응을 평가하는 데 유용.
+  - SIF=10인 조건에서, NIRv × PAR = 100이라면 -> SIF yield = 0.1 
+  - SIF=10인 조건에서, NIRv × PAR = 50이라면 -> SIF yield = 0.2
+  - 즉, 같은 SIF일 때, NIRv x PAR가 작을수록 SIF yield는 커지는데, 이는 형광 효율이 높음을 뜻함.즉 빛과 식물량에 비해 형광 반응이 강함을 의미함. => 광합성에 사용된 에너지 대비 형광 방출이 많다는 것이며, 이는 광합성 효율 저하 또는 스트레스 반응일 수 있음.
+  - 중요한 건 SIF가 NIRv x PAR에 비해 상대적으로 얼마나 큰가임.
+
+  <img width="216" height="52" alt="image" src="https://github.com/user-attachments/assets/8213514d-7e43-4d4f-8725-7faa9da9cc9a" />
+
+  - NIR<sub>v</sub> : NDVI x NIR reflectance(근적외선 반사율)
+  - PAR : Photosynthetically Active Radiation (식물이 실제로 광합성에 사용할 수 있는 빛의 양
+  - SIF : Sun-Induced Fluorescence (식물에서 방출되는 형광 빛의 세기)
+
+- NIR과 PAR 측정: Quantum sensor (LI-190; LI-COR, USA)와 2대의 4S(4 band spectral sensor, 저가형 LED R-G-B-NIR 센서, Kim et al., 2019)로 30분 간격 측정.
+  - One 4S for incoming obtical signal, the other 4S for outgoing optical signal. -> The ratio of the values obtained by the two sensors(4S) was used to calculate the reflectance.
+    
+<br>
+
+### DCMU treatment (제초제 처리)
+
+- 제초제(DCMU)를 희석하여 1% 에탄올이 포함된 물에 녹인 뒤 식물에 도포 -> 목적은 형광 반응을 인위적으로 증가시켜 센서의 SIF 추출 성능을 검증하기 위한 것.
+- DCMU는 광합성의 광계II에 선택적으로 결합하여 결과적으로 식물이 흡수한 빛 에너지를 사용할 수 없게 만듦. -> 과잉 에너지가 형광으로 방출 -> 엽록소 형광(SIF) 증가
+- DCMU는 단기적으로는 잎의 색소 조성이내 캐너피 구조를 변화시키지 않으므로, 스펙트럼 반사율(spectral reflectance)이 DCMU 처리에 의해 영향을 받지 않는다고 가정함.
+  - 이는 형광 변화만을 관찰하고자 할 때, 반사광의 변화가 변수로 작용하지 않도록 하기 위한 전제 조건이 됨.
 
 <br>
 
