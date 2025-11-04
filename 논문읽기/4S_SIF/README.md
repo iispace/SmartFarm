@@ -395,7 +395,7 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
     - 일반적으로 포토다이오드는 빛에 반응하여 전류를 생성하는 센서이지만, 자기장에도 민감하게 반응할 수 있음(Wauters et al., 2009).
     - 센서 주변의 자기장 변화가 전기 신호에 영향을 줄 수 있음을 의미
     - 연구진은 포토다이오드에서 발생한 전류를 디지털 숫자(DN)로 변환하기 위해 customized PCB(printed circuit board)를 개발하려 하였지만, 원하는 수준의 성능을 얻지 못하고 결국 상용 포토센서 증폭기(photosensor amplifier)를 사용함.
-      - <u>적합한 customized PCB를 만들기 위해서는 PCB의 접지 전압이 정확히 제어되어야 함. 그렇지 못하면 자기장에 의해 신호가 왜곡될 수 있음</u>.
+      - <b>적합한 customized PCB를 만들기 위해서는 PCB의 접지 전압이 정확히 제어되어야 함. 그렇지 못하면 자기장에 의해 신호가 왜곡될 수 있음</b>.
       - 맞춤형 PCB를 사용할 경우, 자기장에 의한 노이즈 발생 여부를 반드시 확인하고 보정해야 함.  
     
   - 포토다이오드의 민감도와 필터의 투과율 상이 문제
@@ -421,10 +421,53 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
   - Bi-hemispherical system: 상.하향 광을 모두 넓은 시야각(180°)으로 수집
   - Hemispherical-conical system: 하향광은 넓게, 상향광은 좁은 시야각(원뿔형)으로 수집
 - 현재 4S-SIF는 bi-hemispherical 방식 사용: 입사광과 반사광 모두를 Diffuser를 통해 넓은 각도로 수집
-- 하지만, <u>Diffuser에 추가 구조를 결합하면, 시야각을 제한하여 hemispherical-conical 방식으로 전환 가능(Garrity et al., 2010 참조)</u>.
-- <u>4S-SIF는 구조적 개선을 통해 다양한 관측 방식 간의 성능 차이를 비교.분석할 수 있는 잠재력을 지닌 유연한 센서임</u>.
+- 하지만, <b>Diffuser에 추가 구조를 결합하면, 시야각을 제한하여 hemispherical-conical 방식으로 전환 가능(Garrity et al., 2010 참조)</b>.
+- <b> 4S-SIF는 구조적 개선을 통해 다양한 관측 방식 간의 성능 차이를 비교.분석할 수 있는 잠재력을 지닌 유연한 센서임</b>.
+- 
   
 ### 4S-SIF의 한계
+
+- 온도 변화에 따른 SIF 추출값의 영향과 보정 효과
+  - 다양한 온도 조건에서 보정 전후 SIF 값을 비교한 결과, 일일(daily) 시간 규모에서는 큰 차이가 없었음.
+  - 하지만, 장기적인 신뢰성 확보를 위해 4S-SIF와 기준 분광복사계 간의 추가 비교가 필요함.
+
+- 4S-SIF의 회전 방식
+  - 4S-SIF는 센서를 회전시켜 상·하향 광을 번갈아 측정하는 방식이지만, 이로 인해 두 방향 측정 간 시간 지연(time lag)이 발생함
+  - 특히 구름 많은 날처럼 광 조건이 빠르게 변할 때는 이 사간 차이로 인해 SIF 추출의 불확실성이 증가할 수 있음.
+  - 반면, Fluospec이나 회전 프리즘 시스템처럼, 두 방향을 동시에 측정하는 방식은 시간 지연이 적어 더 정확함.
+  - 하지만, 4S-SIF는 비용 절감 측면에서는 더 유리함.
+
+- FLD(Fraunhofer Line Depth) 기반 SIF 추출 방식의 한계
+  - 4S-SIF는 FLD 방식만 사용 가능하며, 특히 3FLD(3-band FLD)를 기반으로 SIF를 추출함.
+  - 하지만, FLD 방식은 다음과 같은 제한점이 있음.
+    - 구름 낀 날씨처럼 광 조건이 빠르게 변할 때, SIF 변화를 잘 포착하지 못함.
+    - 입삭광과 반사광의 스펙트럼 형태에 민감하며, 정확한 추출이 어려움
+    - 대기 보정(atmospheric correction)이 필요한 경우도 있음(센서와 식생 사이의 거리 등)
+  - 3FLD 방식은 다음의 고급 방법들보다 성능이 떨어짐.
+    - Spectral fitting method(SFM)
+    - Singular vector decomposition(SVD)
+    - Differential optical obsorption spectroscopy(DOAS)
+  - 특히, 3FLD<sub>trans applied</sub> 방식(필터 투과율을 고려한 방식)은 3FLD<sub>one pixel</sub> 방식(고해상도 분광복사계 기반)보다 선형 관계가 낮고(R<sup>2</sup>) 상대 RMSE(<sub>r</sub>RMSE)는 높음.
+  - 스펙트럼 형태의 영향
+    - 입사광의 세기와 스펙트럼 기울기(steepness)가 같더라도, 3FLD<sub>trans applied</sub>방식은 SIF 추출값이 크게 달라질 수 있음.
+      - 특히 겨울철처럼 형광 발산량이 낮을 때, 음수 SIF 값이 나오는 경우도 있음.
+      - 이로 인해 3FLD<sub>trans applied</sub>와 3FLD<sub>one pixel</sub>  간의 관계가 계절이 따라 달라질 수 있음.
+      - 필터 특성의 최적화를 시도했더니, 이러한 문제가 해결될 수 있는 가능성이 보였음.
+        - 초협대역 필터의 중심 파장과 FWHM을 변경(기존 770 nm 필터를 780 nm 중심 파장 필터로 교체, 757 nm 필터와 동일한 투과율 특성 적용)한 결과, R<sup>2</sup> 값이 0.87에서 0.94로 향상되고, rRMSE도 41%에서 27%로 감소
+          <img width="713" height="444" alt="image" src="https://github.com/user-attachments/assets/57efaba0-f2b5-419f-a4c7-ed92e890f10d" />
+          
+- 4S-SIF 센서의 신호 대 잡음비(SNR) 한계와 개선 필요성
+  - 4S-SIF로 추출한 SIF 신호는 기준 분광복사계보다 잡음이 더 많음 → 미세한 일변화(diurnal patterns)나 형광 발산율(ΦF) 분석에 제약
+  - 40개 이상 샘플을 평균 처리 했을 때 잡음이 크게 감소했으나, 야외 환경 통제가 어려워 SNR 추정에 한계가 있음.
+  - 다양한 환경 조건과 실험슬에서 SNR을 정량화하고, SIF 추출에 미치는 영향을 시뮬레이션 및 관측 기반으로 분석할 필요가 있음.
+  - 센서 개선을 통해 SNR을 개선하면 SIF 품질도 향상될 수 있음.
+    
+  <img width="390" height="300" alt="image" src="https://github.com/user-attachments/assets/3e92dced-38e4-4757-999b-ffa4126ec376" />
+  <img width="390" height="300" alt="image" src="https://github.com/user-attachments/assets/4a49ab5b-a330-4289-965e-e7ecd4142ccc" />
+
+## Conclusion
+
+- 
 
 <hr>
 
