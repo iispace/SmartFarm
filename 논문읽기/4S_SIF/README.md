@@ -60,7 +60,7 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 
 <br>
 
-## 제안 (가설)
+## 제안 
 
 - 현장(field)에서 SIF를 모니터링할 때 발생하는 기술적 어려움을 극복하고, 센서 비용을 낮춰 보다 넓은 공간에서 효율적으로데이터를 수집할 수 있도록 설계된 필터 기반의 스마트 근접 원격탐사 시스템(4S-SIF)를 제안함.
 - SIF 관측을 위해 초협대역(ultra-narrow) 밴드패스 필터와 포토다이오드 검출기를 결합하여 특정 파장에서의 전자기 복사 에너지(빛)를 감지하는 방식으로 시스템을 구성함.
