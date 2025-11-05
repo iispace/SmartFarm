@@ -197,6 +197,35 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
   <br>
   <br>
   
-    
+# LEAF ANGLE MEASUREMENTS (잎 각도 측정)
 
+- 잎 각도의 변화를 조절하는 메커니즘을 이해하려면 짧은 시간 안에 수백 ~ 수천 개의 잎의 각도를 측정해야 하는데, 이러한 규모의 측정은 최근까지는 거의 불가능했음.
+- 이 절에서는 잎 각도를 측정하는 세 가지 접근 방식을 소개하고, 각 방법의 장단점을 설명함.
+- 또한, 잎 각도 데이터를 획기적으로 수집할 수 있게 해 줄 새로운 기술에 대해 중점적으로 다룸.
+
+  <br>
+
+- 전통적으로 잎 각도는 수작업으로 측정되었음(Norman & Campbell, 1989; Ross, 1980). 이 측정 방식에는 몇 가지 변형이 있으며, 가장 간단한 방법은 휴대용 경사계(inclinometer)나 각도기(protractor)를 사용하는 것.
+- 좀 더 정교한 방법으로는 Lang(1973)이 개발한 공간 좌표 장치(SCA, Spatial Coordinate Apparatus)가 있으며, 이 장치는 잎 표면을 구성하는 삼각형 꼭짓점들의 좌표를 측정. 이렇게 얻은 3차원 공간상의 좌표를 바탕으로 잎의 경사각(leaf inclination angle)을 계산할 수 있음.
   
+- 보다 최근에 개발된 고급 측정 방식으로는 3D 디지타이저(3D digitizer)가 있으며, 이는 Falster & Westoby(2003)에 의해 소개되었음.
+- 좁은 잎(예: 침엽수나 풀잎)은 넓은 잎(broadleaf species)에 비해 잎 각도를 측정하기가 더 어려운데, 이러한 어려움을 해결하기 위한 방법 중 하나는 여러 경사각을 가진 쿼드랫(quadrat, 조사구)을 사용하는 것.
+- 다양한 경사각에서 단위 길이당 접촉 횟수(contact number)를 측정함으로써, 풀 군락(grass stand)의 평균 잎 각도를 추정할 수 있음(Wilson, 1959).
+- 하지만 이 범주의 측정 방식은 시간이 많이 소요되며, 식물 캐노피 전체에서 여러 잎을 측정하는 것이 목표일 경우에는 사실상 불가능한 작업임. 또 하나의 제한점은, 이러한 측정 방식들이 대부분 키가 작은 식물에만 적용 가능하다는 점
+  
+<br>
+
+- 노동 집약도가 낮은 측정 방법으로는 상향 반구형 사진 촬영(upward hemispherical photography), 식물 캐노피 분석기(plant canopy analyser), 그리고 수평 디지털 카메라(horizontal digital cameras)를 활용하는 방식이 있음(Lerdau et al., 1992; Ryu et al., 2010; Welles & Norman, 1991).
+- 이 중 상향 반구형 사진과 캐노피 분석기는 다양한 시야각에서 G-함수(G-function)를 측정하여 식생 군락의 평균 잎 경사각(MLA, Mean Leaf Angle)을 도출함.
+- 이 두 방법은 캐노피 내 모든 잎이 동일한 천정각(zenith angle)을 가지고 있으며, 방위각(azimuthal angle)이 균일하게 분포되어 있다는 가정을 기반으로 함.
+
+<br>
+
+- 세 번째 접근 방식은 수평으로 설치된 디지털 카메라를 이용해 수관(tree canopy)의 사진을 촬영하는 방법. 선택된 잎 그룹의 각도는 훈련된 사람이 이미지 소프트웨어를 통해 추정함.
+- 이 방법은 비용이 비교적 저렴하지만, 카메라의 시야 방향과 평행한 잎만 분석할 수 있어 사용 가능한 잎의 수가 제한됨. 또한 잎 각도를 이미지 소프트웨어에서 수동으로 추정하기 때문에 주관적일 수 있고 시간이 많이 소요됨.
+- 하지만 최근에는 고속 이미지 처리 기술(high-throughput image processing)의 발전으로 인해 디지털 카메라를 활용해 작물의 잎 각도를 빠르게 분석하는 것이 가능(Müller-Linow et al., 2015).
+
+<br>
+
+- 지상 라이다 스캐닝(Terrestrial Laser Scanning, TLS)은 숲 전체 캐노피의 잎 각도를 빠르고 정확하게 측정할 수 있는 새로운 접근 방식으로, 잎 군집 지수(leaf clumping index), 식물 면적 지수(plant area index), 가지 각도(branching angle) 등 다른 중요한 캐노피 구조적 지표들도 함께 분석할 수 있는 잠재력을 가지고 있음(Calders et al., 2020; Stovall et al., 2021).
+- 
