@@ -74,5 +74,10 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
   - 모델 내에서 잎 각도의 활용 및 표현 방식 검토
   
   <img width="786" height="761" alt="image" src="https://github.com/user-attachments/assets/742b1f4c-d710-4446-ba9f-37fe4288e435" />
-  
+   
+
+# UNDERSTANDING THE ENVIRONMENTAL AND BIOLOGICAL DRIVERS OF LEAF ANGLE VARIATIONS
+
+(잎 각도 변화를 조절하는 환경적, 생물학적 요인에 대한 이해)
+
 - 
