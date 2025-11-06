@@ -34,6 +34,7 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
 |Quantitative Trait|양적 형질. <br> - 키, 체중, 수확량처럼 연속적인 수치로 표현되는 형질로, 여러 유전자와 환경 요인이 복합적인 영향을 받음|
 |Quantitative Trait Loci(QTL,양적 형질 유전자좌)|양적 형질에 영향을 주는 특정 유전자의 위치 또는 유전자 영역<br> -  예를 들어, 식물의 잎 각도에 영향을 주는 유전자가 위치한 염색체 상의 특정 구간이 QTL임.|
 |Leaf Economics Spectrum<br> 잎 경제 스펙트럼|식물의 잎이 자원(탄소, 질소 등)을 어떻게 획득하고 사용하는지를 설명하는 생태학적 개념. <br> - 식물의 '빠름-느림' 스펙트럼으로 구분하며, 잎의 여러 형질들이 서로 밀접하게 연결되어 있다는 점을 강조함.<br> - LES의 핵심 개념<br> <img width="693" height="328" alt="image" src="https://github.com/user-attachments/assets/57e79e9c-a254-4f50-8b6b-f8eb89d349db" />|
+|광합성 경로에 따른 식물 분류|식물을 탄소 고정 경로(carbon fixation pathway)에 따라 분류하면 다음과 같음.<br> - C3 식물: 가장 일반적인 광합성 경로. 3탄소 화합물(3-PGA, 3-Phosphoglyceric Acid)을 최초 생성(쌀, 보리, 밀, 콩 등 온대 식물). 식물이 CO<sub>2</sub>를 고정할 때, 루비스코(Rubisco) 효소가 CO<sub>2</sub>를 리불로오스-1, 5-이인산(RuBP)과 결합시켜 두 분자의 3-PGA 생성.<br> - C4 식물: 고온.강광 조건에서 효율적. 4탄소 화합물(OAA, 옥살아세트산) 생성(옥수수, 사탕수수 등 열대 식물) C3식물보다 광포화점이 높고, 보상점은 낮기 때문에 빛에너지를 효율적으로 이용할 수 있음.<br> - CAM 식물: 덮고 건조 환경에 적응. 낮에는 루비스코가 산소를 고정해서 광호흡이 일어나는 것을 막기 힘들기 때문에 비교적 온도가 낮은 밤에 기공을 열어 이산화탄소를 흡수하여 말산(malate)으로 고정한 후, 낮에 기공을 닫아놓고 광합성을 함(선인장, 다육질 식물 등 사막 식물). CAM 식물은 C4 식물과 다르게 이산화탄소 고정 시간대가 정해져 있음. 낮에는 수분 증발을 막기 위해 기공을 닫아 이산화탄소가 부족하기 때문에 기공을 열어도 수분 증발이 없는 밤에 고정하는 것.|
 
 <hr>
 
@@ -244,5 +245,32 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
   <br>
 
 # MODELLING WITH LEAF ANGLE (잎 각도를 이용한 모델링)
+
+- 잎 각도 분포의 과도한 단순화가 지구 시스템 모델(Earth System Model)에 미치는 영향에 대한 내용 기술
+  - 지구 시스템 모델은 식물 기능형(PFT, Plant Functional Type)마다 잎 각도를 고정된 값으로 설정
+  - 예를 들어, Community Land Model version 5(CLM5) 모델에서는:
+    - 온대 낙엽수림: &chi;<sub>L</sub> = 0.25 (평균 잎 각도 약 51.3도)
+    - C3 작물: &chi;<sub>L</sub> = -0.30 (평균 잎 각도 약 69.5도)
+  - 이 두 PFT(Plant Functional Type) 간의 직접 태양광 차단량 차이는 약 37%에 달함
+  - Y-plant 모델과 DART 모델은 개별 식물 수준에서 잎 각도를 더 현실적으로 표현함.
+
+<br>
+
+- 잎 각도가 미치는 큰 영향은, 그것이 광학 신호(예: 캐노피 반사율 및 태양 유도 엽록소 형광)와 탄소, 물, 에너지 흐름 시뮬레이션에서 가장 민감한 매개변수 중 하나이기 때문.
+- 잎 각도는 햇빛을 가로막고 산란시키는 표면 면적을 조절함으로써 캐노피의 복사 전달(radiative transfer)과 탄소 및 수분 흐름 시뮬레이션에 직접적인 영향을 미침.
+- 복사 전달 모델 시뮬레이션에 따르면, 잎 각도 분포(LAD)의 변화는 순 탄소 흡수율을 최대 4배까지 변화시키고, 현열 및 잠열 흐름(sensible and latent heat fluxes)을 약 20%까지 변화시킬 수 있음(Baldocchi et al., 2002).
+- 또한, 잎 각도는 LAI(잎 면적 지수)추정에도 영향을 미쳐, 정확한 잎 각도 측정이 포함된 경우와 그렇지 않은 경우 사이에 LAI 값이 최대 약 25%까지 차이날 수 있음(Stovall et al., 2021).
+
+  <br>
+
+- <b>현재까지 알려진 바에 따르면, 어떤 육상 표면 모델(land surface model)도 잎 각도의 수직적 분포(Vertical distribution of leaf angle)를 고려하고 있지 않음(Bonan et al., 2021)</b>
+- <b>모델을 무분별하게 복잡하게 만드는 것은 경계해야 하지만, 잎 각도가 캐노피의 물질 흐름(canopy fluxes)과 미시 기후(microclimate)를 모델링하는 데 있어 매우 중요ㅛ한 변수이며, 앞으로 잎 각도에 대한 데이터가 점점 더 많이 확보될 가능성이 있기 때문에, 모델에 계절적 및 수직적 잎 각도 변화를 포함시키는 것을 고려할 가치가 있음</b>
+
+- 잎 각도의 수직변 변화와 이에 따른 잎 면적의 변화를  모델에 반영하면, 캐노피 광합성과 그 수직적 분포에 큰 영향을 미칠 수 있음(Stovall et al., 2021).
+- 특히 TLS(지상 레이저 스캐닝)를 포함한 다양한 플랫폼에서 잎 각도 측정이 증가함에 따라, 모델 개발자들이 활용할  수 있는 수직 잎 각도 프로파일 데이터가 더욱 풍부해질 것임.
+
+<br>
+
+# MODEL SIMULATIONS OF THE IMPACT OF CHANGING LEAF ANGLES ON CANOPY FLUXES AND ENERGY BALANCE (잎 각도 변화가 캐노피 플럭스 및 에너지 균형에 미치는 영향에 대한 모델 시뮬레이션)
 
 -
