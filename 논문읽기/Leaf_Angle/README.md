@@ -35,6 +35,7 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
 |Quantitative Trait Loci(QTL,양적 형질 유전자좌)|양적 형질에 영향을 주는 특정 유전자의 위치 또는 유전자 영역<br> -  예를 들어, 식물의 잎 각도에 영향을 주는 유전자가 위치한 염색체 상의 특정 구간이 QTL임.|
 |Leaf Economics Spectrum<br> 잎 경제 스펙트럼|식물의 잎이 자원(탄소, 질소 등)을 어떻게 획득하고 사용하는지를 설명하는 생태학적 개념. <br> - 식물의 '빠름-느림' 스펙트럼으로 구분하며, 잎의 여러 형질들이 서로 밀접하게 연결되어 있다는 점을 강조함.<br> - LES의 핵심 개념<br> <img width="693" height="328" alt="image" src="https://github.com/user-attachments/assets/57e79e9c-a254-4f50-8b6b-f8eb89d349db" />|
 |광합성 경로에 따른 식물 분류|식물을 탄소 고정 경로(carbon fixation pathway)에 따라 분류하면 다음과 같음.<br> - C3 식물: 가장 일반적인 광합성 경로. 3탄소 화합물(3-PGA, 3-Phosphoglyceric Acid)을 최초 생성(쌀, 보리, 밀, 콩 등 온대 식물). 식물이 CO<sub>2</sub>를 고정할 때, 루비스코(Rubisco) 효소가 CO<sub>2</sub>를 리불로오스-1, 5-이인산(RuBP)과 결합시켜 두 분자의 3-PGA 생성.<br> - C4 식물: 고온.강광 조건에서 효율적. 4탄소 화합물(OAA, 옥살아세트산) 생성(옥수수, 사탕수수 등 열대 식물) C3식물보다 광포화점이 높고, 보상점은 낮기 때문에 빛에너지를 효율적으로 이용할 수 있음.<br> - CAM 식물: 덮고 건조 환경에 적응. 낮에는 루비스코가 산소를 고정해서 광호흡이 일어나는 것을 막기 힘들기 때문에 비교적 온도가 낮은 밤에 기공을 열어 이산화탄소를 흡수하여 말산(malate)으로 고정한 후, 낮에 기공을 닫아놓고 광합성을 함(선인장, 다육질 식물 등 사막 식물). CAM 식물은 C4 식물과 다르게 이산화탄소 고정 시간대가 정해져 있음. 낮에는 수분 증발을 막기 위해 기공을 닫아 이산화탄소가 부족하기 때문에 기공을 열어도 수분 증발이 없는 밤에 고정하는 것.|
+|[TRY 데이터베이스](https://www.try-db.org)|전 세계 식물 형질(plant trait)을 수집.공유하는 가장 방대한 공개 데이터베이스<br><br> - 생태학, 생물지리학, 기후변화 연구 등 다양한 분야에서 식물의 형태적.생리적 특성을 분석하는 데 활용 |
 
 <hr>
 
@@ -359,7 +360,22 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
 
 ### Incorporate leaf angle plasticity in canopy, ecosystem and land surface models(캐노피, 생태계 및 지표면 모델에 잎 각도 가소성 통합)
 
-- 
+- 광 차단(light interception)은 식생 인구통계 모델, 복사 전달 모델, 육상 표면 모델에서 핵심적인 과정이며, 이러한 모델들에서 잎 각도와 그 역할을 표현하는 방식은 모델마다 크게 다름(Table 1).
+
+  <img width="999" height="807" alt="image" src="https://github.com/user-attachments/assets/07a5d518-7076-4350-a77c-0b30a6c71b0b" />
+
+- 개체 수준 또는 식생 인구통계 모델에서는 잎 각도와 잎 면적의 수직적 변화를 표현하는 것이 중요. 이는 개체 간 경쟁에 영향을 미치기 때문.
+- 전 지구 규모의 육상 표면 모델(공간 해상도가 거친 모델_에서는 잎 형질과 각도의 수직 프로파일을 통합하는 것이 캐노피 플럭스에 큰 영향을 미침(Bonan et al., 2021).
+- 본 연구 결과는 잎 각도의 변화가 캐노피 광합성, 온도, 수분 이용에 실질적인 영향을 미친다는 것을 보여줌(Figure 5).
+
+  <img width="1011" height="629" alt="image" src="https://github.com/user-attachments/assets/1d0f021b-9b1c-473b-8500-e09579025af6" />
+
+- 또한, 잎 각도 변화의 영향은 캐노피 내 수직 위치에 따라 크기와 방향이 달라짐. 이와 관련하여 잎 각도는 식물이 최적의 생육 성능을 달성하는 데 중요한 매개변수가 될 수 있으며, 환경 변화에 따라 잎 각도를 조절하는 능력은 식물의 최적성 유지에 필수적일 수 있음(Harrison et al., 2021).
+
+- 잎 각도와 다른 잎 형질 간의 조정 및 상관관계 가능성을 고려할 때, 이러한 관계를 모델에 통합한다면 잎 및 캐노피 수준의 생리적 과정을 개선하고, 동시에 모델의 매개변수 수를 줄일 수 있는 가능성도 있음.
+
+  <br>
+  
   <hr>
 
   [Supporting Information](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fele.14215&file=ele14215-sup-0001-Supinfo.pdf)
