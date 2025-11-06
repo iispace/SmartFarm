@@ -378,4 +378,6 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
   
   <hr>
 
-  [Supporting Information](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fele.14215&file=ele14215-sup-0001-Supinfo.pdf)
+1. [Supporting Information](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fele.14215&file=ele14215-sup-0001-Supinfo.pdf)
+  
+2. [Model Simulation Results Data](https://datadryad.org/dataset/doi:10.5061/dryad.w9ghx3ftk)
