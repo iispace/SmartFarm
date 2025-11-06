@@ -362,7 +362,7 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
 
 - 광 차단(light interception)은 식생 인구통계 모델, 복사 전달 모델, 육상 표면 모델에서 핵심적인 과정이며, 이러한 모델들에서 잎 각도와 그 역할을 표현하는 방식은 모델마다 크게 다름(Table 1).
 
-  <img width="999" height="807" alt="image" src="https://github.com/user-attachments/assets/07a5d518-7076-4350-a77c-0b30a6c71b0b" />
+  <img width="744" height="600" alt="image" src="https://github.com/user-attachments/assets/07a5d518-7076-4350-a77c-0b30a6c71b0b" />
 
 - 개체 수준 또는 식생 인구통계 모델에서는 잎 각도와 잎 면적의 수직적 변화를 표현하는 것이 중요. 이는 개체 간 경쟁에 영향을 미치기 때문.
 - 전 지구 규모의 육상 표면 모델(공간 해상도가 거친 모델_에서는 잎 형질과 각도의 수직 프로파일을 통합하는 것이 캐노피 플럭스에 큰 영향을 미침(Bonan et al., 2021).
