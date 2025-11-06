@@ -227,5 +227,22 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
 
 <br>
 
-- 지상 라이다 스캐닝(Terrestrial Laser Scanning, TLS)은 숲 전체 캐노피의 잎 각도를 빠르고 정확하게 측정할 수 있는 새로운 접근 방식으로, 잎 군집 지수(leaf clumping index), 식물 면적 지수(plant area index), 가지 각도(branching angle) 등 다른 중요한 캐노피 구조적 지표들도 함께 분석할 수 있는 잠재력을 가지고 있음(Calders et al., 2020; Stovall et al., 2021).
-- 
+- 지상 레이저 스캐닝(Terrestrial Laser Scanning, TLS)은 숲 전체 캐노피의 잎 각도를 빠르고 정확하게 측정할 수 있는 새로운 접근 방식으로, 잎 군집 지수(leaf clumping index), 식물 면적 지수(plant area index), 가지 각도(branching angle) 등 다른 중요한 캐노피 구조적 지표들도 함께 분석할 수 있는 잠재력을 가지고 있음(Calders et al., 2020; Stovall et al., 2021).
+- TLS는 포인트 클라우드의 법선 벡터(normal vector)를 계산하여 잎 각도를 추정하며, 하나의 잎에서도 여러 각도 값을 추정할 수 있어 잎 내부의 미세한 각도 변화를 포착할 수 있음 (Stovall et al., 2021).
+- TLS는 아래와 같은 특징으로 인해 기존 방법들의 여러 한계를 극복함
+  - 빠른 측정 속도: 약 1분 ~ 3분의 스캔 시간으로 반경 30 ~ 50미터의 영역을 커버하며, 수십만 개의 잎을 포함
+  - 견고함(Robust): 다양한 연구에서 검증됨 (validated in studies such as Stovall et al., 2021)
+  - 반복성(Repeatable): 완전 자동화된 데이터 수집 및 처리로 사람의 개입 최소화
+- 이 방식은 잎 각도의 수직 및 수평 분포를 공간적으로 특성화(characterization)할 수 있으며, 소수의 잎만 샘플링하는 기존 방식과 달리 실제 분포를 반영할 수 있음. 또한 다양한 각도에서 스캔함으로써 개별 나무의 전체적인 구조를 파악할 수 있어, 잎이나 가지가 가려지는 문제(occlusion)를 해결할 수 있음(Wilkes et al., 2017).
+- 디지털 카메라 방식과 비교했을 때, TLS는 너도밤나무(beech tree)의 잎 각도를 더 정확하게 추출할 수 있음 (Liu et al., 2019).
+- TLS는 상대적으로 고가의 장비라는 단점이 있지만, LiDAR 기술이 자율주행, 측량, 건설 등 다양한 분야에서 활용되면서 시장이 성장함에 따라 TLS의 가격은 점차 하락할 것으로 예상됨.
+- 그렇다고 해서 TLS가 완벽한 해결책(panacea)는 아님. 앞서 언급한 다른  방법들과 마찬가지로 TLS스캔은 장비로부터 멀리  떨어진 미세한 침엽수 잎을 정확히 식별하지 못하는 한계가 있고,  데이터를 처리하는 데 시간이 많이 걸리며, 고도의 전문 지식이 요구된다는 점도 단점임. 이러한 문제를 완화하기 위해 많은 무료 알고리즘들이 개발되어 왔음(e.g. Hackenberg et al., 2021).
+  
+- 잎 각도 측정은 잎 면적 지수(LAI, Leaf Area Index)의 추정 정확도를 향상시키는 데 도움이 됨.
+- LAI를 반구형 사진(hemispherical photography)이나 광 센서(light sensor)를 통해 추정할 때 널리 사용되는 가정 중 하나는, 잎 각도 분포(LAD, Leaf Angle Distribution)가 구형(spherical)이며 방위각(azimuth angle) 전반에 걸쳐 균일하게 분포되어 있다는  것 (Jonckheere et al., 2004). 그러나 이러한 가정이 타당하지 않다는 충분한 근거들이 존재함. 최근의 연구(Stovall et al., 2021)에서는 TLS를 이용해 실제 잎 각도를 측정한 결과, 구형(spherical)이고 방위각적으로 균일한(homogenous) 분포를 가정한 경우보다 식물 면적 지수(PAI, Plant Area Index) 추정값이 최대 25% 더 높게 나타날 수 있음이 밝혀졌음.
+
+  <br>
+
+# MODELLING WITH LEAF ANGLE (잎 각도를 이용한 모델링)
+
+-
