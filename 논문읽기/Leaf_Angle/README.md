@@ -343,10 +343,23 @@ canopy optimization, leaf economics spectrum, light environment, photosynthesis,
 
 <br>
 
-### Integrating leaf angle and other plant traits in the EEO-based framework
+### Integrating leaf angle and other plant traits in the EEO-based framework(EEO 기반 프레임워크에 잎 각도 및 기타 식물 특성 통합)
+
+- 잎 각도와 다른 형질들을 동시에 측정함으로써, 잎 각도가 잎 경제 스펙트럼(LES) 및 구조적 경제 스펙트럼에서 어떤 역할을 하는지, 그리고 LES의  가소성에 어떻게 기여하는지를 탐구할 수 있음.
+- 이러한 측정을 통해 해결해야 할 핵심 질문은 다음과 같음:
+  - 관찰된 잎 각도 분포가 식물에게 최적인가?
+  - 경쟁의 역할은 무엇인가?
+- 기존 모델링 연구에서는 캐노피 상층에 수평 잎을 가진 개체가 경쟁 우위를 가진다고 제시되었지만, 실제 관찰에서는 그 반대의 결과가 나타나기도 함(Hikosaka & Hirose, 1997; Figure 3).
+- 이 질문을 해결하려면, 대상 개체의 캐노피 구조와 주변 환경(다른 개체들)을 정밀하게 특성화해야하며, 이를 위해 TLS(지상 레이저 스캐닝)가 적합한 도구일 것임.
+- 잎 각도 측정과 함께 잎 형질, 반응 변수(예: 탄소 및 수분 플럭스), 환경 조건(온도, 광 세기 등)을 동시에 측정할 것을 권장함.
+- 이는 잎 각도 변화의 해석을 돕고, 탄소.물.에너지 흐름에 미치는 영향을 이해하는 데 유용(Figure 2).
+- 또한, 가뭄, CO<sub>2</sub> 농도 증가, 온도 변화 등 글로벌 변화 실험에서는 캐노피 구조가 측정되지 않는 경우가 많기 때문에, 이러한 실험에서도 TLS를 활용한 캐노피 구조 측정을 권장함.
+
+<br>
+
+### Incorporate leaf angle plasticity in canopy, ecosystem and land surface models(캐노피, 생태계 및 지표면 모델에 잎 각도 가소성 통합)
 
 - 
-
   <hr>
 
   [Supporting Information](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fele.14215&file=ele14215-sup-0001-Supinfo.pdf)
