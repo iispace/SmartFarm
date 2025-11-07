@@ -20,8 +20,10 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 # 용어 정리
 |용어|설명|
 |:-|:-|
-|SIF|태양광 유도 엽록소 형광, 식물에서 방출되는 형광 신호<br><br> - 광합성에서 광 에너지를 생화화적 에너지로 변환한 광인산화반응(Photophosphorylation)의 부산물인 엽록소 형광 방출량[[1]](#ref_1)|
+|SIF|태양광 유도 엽록소 형광, 식물에서 방출되는 형광 신호<br> - 광합성에서 광 에너지를 생화화적 에너지로 변환한 광인산화반응(Photophosphorylation)의 부산물인 엽록소 형광 방출량을 기반으로 하는 정[[1]](#ref_1)<br> - 식물이 흡수한 광합성 유효 복사(PAR) 중 엽록소-a(Chlorophyll-a)에서 이용되지 않은 에너지가 650 ~ 800 nm 파장대에서 방출되는 전자기적 신호[[1]](#ref_1)|
 |SIF Yield|식물 캐노피 수준에서 엽록소 형광(SIF)의 효율<br> - 절대적인 SIF의 크기와 무관하며, SIF가 NIRv × PAR에 비해 상대적으로 얼마나 큰지가 중요함.<br> - 식물이 받은 빛과 식물량 대비 얼마나 형광을 방출했는지를 나타내는 비율 지표<br> - SIF Yield가 높으면 광합성에 사용된 에너지 대비 형광 방출이 많다는 것이며, 이는 광합성 효율 저하 또는 스트레스 반응일 수 있음.|
+|PAR|Photosynthetically Active Radiation, PAR<br><br> - 식물이 광합성에 사용할 수 있는 가시광 영역(400 ~ 700 nm)의 빛<br> - 빛의 세기가 아니라 광자의 개수(입자 수)가 중요하므로 PPFD 단위로 측정(광합성 반응은 에너지의 세기보다는 얼마나 많은 광자가 엽록소에 도달했는가로 결정되므로...)|
+|PPDF|광합성 광자 플럭스 밀도(Photosynthetic Photon Flux Density)<br><br> - 초당 특정 표면적에 착지하는 PAR 범위 내의 광자 수 측정 단위<br> - 초당 제곱미터당 마이크로몰(μ몰/m²/s) 단위로 표시|
 |Plant functional types(식물 기능형)|식물 종(species)이 아니라, 기능적 특성(functional traits)에 따라 식물을 분류하는 방식 <br> - C3 작물: 쌀, 밀 등 일반적인 광합성 경로 사용 작물 <br> - C4 작물: 옥수수, 사탕수수 등 고온.강광 환경에 적응한 작물 <br> - CAM: 선인장, 다육식물 등 밤에 CO<sub>2</sub>를 흡수하는 식물|
 |gross primary production (GPP)|식물이나 조류 같은 광합성 생물들이 태양 에너지를 이용해 CO<sub>2</sub>를 유기물로 전환하는 총량. 즉, 광합성을 통해 생성된 총 에너지 또는 탄소량<br>GPP는 대기 중 CO<sub>2</sub> 흡수량을 나타내므로 탄소 순환을 이해하는 데 핵심 지표임<br>GPP가 높다는 것은 식생이 활발히 성장하고 있다는 의미 |
 |Vegetation phenology|식생의 생물계절학. 식물의 생장과 계절적 변화 과정을 연구하는 분야<br> - 발아(Germination)<br> - 잎 발달(Leaf-out)<br> - 개화(Flowering)<br> - 결실(Fruiting)<br> - 낙엽(Leaf senescence) 등의 항목 관찰|
