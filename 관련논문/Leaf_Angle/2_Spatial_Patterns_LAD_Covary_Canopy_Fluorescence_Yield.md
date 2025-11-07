@@ -354,6 +354,6 @@ Solar-induced chlorophyll fluorescence (SIF), Terrestrial laser scanning (TLS), 
 - 또한, 베타 분포 매개변수가 실제 잎 각도 분포를 LIDF(LIDFa, LIDFb)보다 더 잘 설명한다는 점도 발견함. LIDF는 복사 전달 모델(RTM)에서 일반적으로 사용되지만, 본 연구에서는 β 분포가 더 적합한 결과를 보였음.
 - 이로써 캐노피 반사율과 SIF의 공간적 변동성을 해석할 때 수관 구조의 직접적 효과와 간접적 효과를 구분하는 것이 중요함을 보였음.
 
- <img width="1115" height="284" alt="image" src="https://github.com/user-attachments/assets/8e0ac43d-f136-4e13-86ee-6904c2a3a8b5" />
+ <img width="1079" height="242" alt="image" src="https://github.com/user-attachments/assets/86f9e3e8-1072-48c0-be9a-3a9ff347c1e1" />
 
  
