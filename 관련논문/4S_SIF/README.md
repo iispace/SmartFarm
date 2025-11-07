@@ -478,7 +478,12 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 
 <hr>
 
+보충자료
+
+- [Supplementary Material](https://www.sciencedirect.com/science/article/pii/S0034425722004175#ec0005)
+
+<br>
+
 참고문헌
 
-[] [Supplementary Material](https://www.sciencedirect.com/science/article/pii/S0034425722004175#ec0005)
 [1] <a id="ref_1"></a> 류재현, 장선웅, 김현기 외, "논벼에서 관측된 태양 유도 엽록소 형광 자료: 나주에서 2020년 6월 10일부터 10월 5일까지", 한국농림기상학회지, vol.23, no.1, pp. 82-88 (7 pages), 2021
