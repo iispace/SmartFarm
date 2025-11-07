@@ -12,7 +12,7 @@ Remote Sensing of Environment, Vol. 330, 114996, 2025
 
 - 광합성 효율, 잎의 배열이나 각도 등 식물 캐노피에서 일어나는 기능적, 구조적 특성의 변화(조율, coordination)는 캐노피 반사율(canopy reflectance)과 태양 유도 엽록소 형광(SIF)의 원격 탐사 관측에 영향을 미침.
 - 잎의 각도는 캐노피의 주요 구조적 특성 중 하나임. 방사 전달 모델들(radiative transfer models)이 잎의 각도가 원격 탐사 신호를 조절하는 데 중요한 역할을 한다는 것을 보여주고 있음에도 불구하고, 방법론적 및 기술적 장벽으로 인해 잎의 각도가 캐노피 기능 및 원격 탐사 관측과 어떤 관계가 있는지에 대한 상세한 연구가 이루어지지 못했음.
-- 본 연구에서는 FluoSpecAir라는 무인 항공 시스템(UAS)을 활용하여, 서로 다른 두 시기(생장기, 낙엽기)에 걸쳐 개별 나무 캐노피에서 적외선 영역의 태양 유도 엽록소 형광(SIF<sub>obs, FR</sub>), 근적외선 반사 및 복사(NIR<sub>v</sub> and NIR<sub>v</sub>R), 정규화 식생 지수(NDVI), 엽록소:카로티노이드 지수(CCI, chlorophyll:carotenoid index)의 공간적 패턴을 조사함.
+- 본 연구에서는 FluoSpecAir라는 무인 항공 시스템(UAS)을 활용하여, 서로 다른 두 시기(생장기, 노화기)에 걸쳐 개별 나무 캐노피에서 적외선 영역의 태양 유도 엽록소 형광(SIF<sub>obs, FR</sub>), 근적외선 반사 및 복사(NIR<sub>v</sub> and NIR<sub>v</sub>R), 정규화 식생 지수(NDVI), 엽록소:카로티노이드 지수(CCI, chlorophyll:carotenoid index)의 공간적 패턴을 조사함.
 -  추가로, 지상 라이다 스캐닝(TLS)를 이용해 개별 나무 캐노피의 3차원 스캔을 수집하고, 잎의 반사 스펙트럼을 통해 잎의 색소 함량도 추정하였음.
 - 본 연구에서는 LAD(Leaf Angle Distribution)를 μ와 ν라는 매개변수로 정의되는 배타 분포로 모델링했으며, 또한 잎 경사 분포 함수(Leaf Inclination Distribution Function, LIDF)는 LIDFa와 LIDFb라는 매개변수로 정의함.
   - LIDF: 방사 전달 모델에서 사용하는 함수로, 잎의 경사 각도 분포를 설명함
@@ -76,4 +76,158 @@ Solar-induced chlorophyll fluorescence (SIF), Terrestrial laser scanning (TLS), 
     - Badgley 등(2017)은 NIR<sub>V</sub>가 NDVI와 NIR<sub>T</sub>의 곱으로 근사될 수 있음을 보여주었음. 여기서 NDVI는 식생에 의한 근적외선 반사 비율을 나타냄. 이러한 NDVI 근사 방식은 다양한 식생 유형과 공간 규모에 걸쳐 NDVI나 SIF보다 GPP(총 1차 생산성)를 더 잘 예측하는 지표로 밝혀짐(Badgley et al., 2019; Baldocchi et al., 2020; Dechant et al., 2020, 2022).
     - NIR<sub>V</sub>는 far-red SIF와 물리적 기반을 공유하기 때문에 f<sup>esc</sup><sub>&lambda;, &Omega;</sub>를 근사할 수 있음(Zeng et al., 2019). 추가적인 모델링과 현장 기반 분석을 통해 NDVI의 복사량 등가값(NIR<sub>V</sub>R을 사용하여 &Phi;<sub>F</sub>를 도출할 수 있음이 밝혀짐(Zeng et al., 2022).
 
-  - 
+  - 본 연구의 질문:
+    - 새로운 UAS(무인항공시스템) 기반 관측 시스템을 TLS(지상 라이다 스캐닝) 데이터 및 잎 샘플링과 함께 활용하여, '개별 캐노피에서 캐노피 구조가 반사 지수, SIF(태양 유도 형광), 그리고 &Phi;<sub>F,λ</sub>(형광 양자 수율)와 함께 변화하는가?'
+  - 설정 가설: LAD(잎 각도 분포)와 LAI(잎 면적 지수)가 원격 탐사로 측정된 NIRV(식생 근적외선 반사), 반사 지수, SIF, 그리고 &Phi;<sub>F</sub>와 상관관계가 있을 것임.
+  - 연구 가설을 확인하기 위해, 생리적 단계가 뚜렷하게 대비되는 두 시기의 데이터셋을 분석함.
+    - 하나는 생장이 왕성한 시기(생장기)에 수집된 데이터셋: peak growing season dataset
+    - 다른 하나는 가을철 잎 노화기(잎이 노화되어 겨울 휴면을 준비하며 영양분이 재배분되는 시기)에 수집된 것: foliar senescence dataset
+
+
+# Materials and methods
+
+1. 연구 장소 및 시기
+   - 장소: 미국 버지니아주 Milton Airfield(재생된 활엽수림과 침엽수림 포함)
+   - 시기: 두 생리적 단계에서 데이터 수집
+     
+2. 관측 시스템
+   - 기반 장비: DJI Matrice 600 Pro 드론
+   - 센서 구성:
+     - QEPro 분광기(730nm ~ 785nm)
+     - Flame 분광기(340nm ~ 1040nm)
+   - 측정 방식:
+     - 드론이 캐노비 상공 15m에서 정지 비행하며, 시야 면적은 약 2m<sup>2</sup>
+     - 광섬유 시야(FOV)는 카메라 영상과 정렬되어 정확한 위치 확인 가능
+     - SIF<sub>obs,FR</sub>는 O₂-A 밴드(759.5–761.5nm)에서 스펙트럼 피팅 방식으로 추출
+   
+3. 보조 데이터 수집 
+   - TLS(Terrestrial Laser Scanning):
+     - 캐노피 구조 측정: LAD(잎 각도 분포), LAVD(잎 면적 밀도), LAI(잎 면적 지수)
+     - 사용 장비: Faro Focus 120, Leica RTC 360
+     - 3D 포인트 클라우드를 voxel (10cm<sup>3</sup>) 단위로 분석
+    - 잎 샘플링:
+      - 캐노피 상부의 햇빛 노출 잎 채취
+      - 반사율 측정 후 PROSPECT-D 모델로 엽록소 및 카로티노이드 함량 추정
+
+4. 데이터 처리 및 분석
+   - 광학 지표 계산:
+     - NDVI, CCI, NIR<sub>V</sub>, NIR<sub>V</sub>R
+   - 형광 효율 추정:
+     - SIF<sub>obs, FR</sub> / NIR<sub>V</sub>R 비율을 통해 &Phi;<sub>F, FR</sub> 근사  (여기서 FR은 Far-Red)
+   - 통계 분석:
+     - Linear mixed-effects models 사용
+     - LAD, LAVD와 광학 지표 간의 상관관계 분석
+     - 생장기 vs 잎 노화기 비교
+
+    <br>
+    
+# Results
+
+1. DBF(낙엽활엽수림) 캐노피의 NDVI, CCI, SIF<sub>obs, FR</sub>, 그리고 SIF<sub>obs, FR</sub> / NIR<sub>V</sub>R 값은 생장기 동안이 잎 노화기보다 더 높았음(Fig. 4).
+2. 반면, 캐노피 NIR<sub>V</sub>, LAVD<sub>10%</sub>, 그리고 베타 분포 매개변수인 ν<sub>10%</sub>와 μ<sub>10%</sub>는 두 시기 간 큰 차이를 보이지 않았음(Fig. 4).
+3. 특히 생장기의 마지막 주 비행에서는 SIF<sub>obs, FR</sub> 및 SIF<sub>obs, FR</sub> / NIR<sub>V</sub>R 값이 잎 노화기와 유사한 수준을 보였음(Fig. 4d–4e).
+4. LAVD<sub>10%</sub>와 ν<sub>10%</sub> 값은 생장기 동안 약간 높았지만, DOY 217을 제외하면 통계적으로 유의미한 차이는 없었음(Fig. 4f, h).
+5. 잎 각도의 평균(mean<sub>10%</sub>)과 표준편차(sd<sub>10%</sub>)에서도 두 시기 간 차이는 관찰되지 않았으며(Fig. S4f–S4g), 다만 생장기에는 평균 잎 각도가 더 높은 수관이 상대적으로 많았음. 이 주간의 TLS 관측은 Leica RTC 360을 사용해 수행되었으며, 이 장비는 다른 주에 사용된 Faro Focus TLS보다 약 5배 더 많은 포인트를 수집함.
+   
+   <img width="724" height="400" alt="image" src="https://github.com/user-attachments/assets/6336f76e-71cf-4e38-8c47-6c57aca01984" />
+
+- 이러한 결과는, 생장기에는 식물의 생리적 활성이 높아 광학 지표들이 상승하지만, 캐노피 구조 지표(LAD, LAVD 등)는 계절 변화에 덜 민감하거나 안정적이라는 것을 의미함.
+
+6. 생장기 동안 DBF(낙엽활엽수림) 수종의 캐노피 NDVI는 일정하게 유지되었으며, DOY 133, 148, 217일의 평균값은 0.88이었고, DOY 188일에는 캐노피 NDVI가 더 높아져 평균 0.91을 기록(Fig. 4a).
+7. 캐노피 NIR<sub>V</sub>는 DOY 148일에 최고치를 기록한 후 점차 감소했으며, DOY 217일에는 가장 낮은 평균값을 보임.
+8. 캐노피 CCI는 생장기 내내 감소하는 경향을 보였으며, DOY 217일의 평균값은 DOY 133일보다 낮았지만, DOY 133일은 변동성이 컸던 날이었음(Fig. 4c).
+9. SIF<sub>obs,FR</sub>과 SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R 역시 생장기 동안 감소하는 경향을 보였지만, DOY 148일에는 일시적으로 증가하는 양상이 관찰되었음(Fig. 4c–4d).
+10. 잎 노화기 동안 DBF 수종의 캐노피 NDVI는 감소했으며(Fig. 4a), DOY 251일의 평균 NDVI 0.87에서 DOY 282일에는 약 9% 감소한 0.79로 나타남.
+11. 캐노피 NIRV, CCI, SIF<sub>obs,FR</sub>, SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R 값은 잎 노화기 측정 기간 동안 큰 변화는 없었지만, DOY 251일과 282일 사이의 분포는 달라졌음(Fig. 4b–4e).
+12. ENF(침엽상록수림) 캐노피의 수가 제한적이었기 때문에, 두 데이터셋 간의 통계적 또는 정성적 비교는 수행하지 않았음.
+    
+  <img width="1115" height="238" alt="image" src="https://github.com/user-attachments/assets/3ec7cd82-04d6-4da9-9912-c54f187380eb" />
+
+- 즉,
+  - 생장기에는 생리적 지표(NDVI, CCI, SIF 등)가 시간에 따라 변화하며, 특히 DOY 148일에서 일시적 상승이 관찰되었음.
+  - 잎 노화기에는 평균값은 안정적이지만, 분포의 변화가 뚜렷하게 나타남 -> 이는 개체간 생리적 반응의 다양성을 시사하는 것.
+  - ENF 수종은 표본 수가 적어 분석에서 제외되었으며, DBF 중심으로 해석됨.
+
+<br>
+
+13. 생장기 동안 SIF<sub>obs,FR</sub>의 공간적 변동은 캐노피 NDVI보다 캐노피 CCI와 더 강한 상관관계를 보였음(Fig. 5).
+14. SIF<sub>obs,FR</sub>과 NIR<sub>V</sub> 사이에도 유의미한 관계가 관찰되었지만, 그 강도는 NDVI나 CCI보다 약했음.
+15. SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R에 대해서는 캐노피 NDVI가 CCI보다 더 강한 상관관계를 보였으며, NIR<sub>V</sub>와는 관계가 나타나지 않았음. 이러한 패턴은 오전, 정오, 오후 시간대 모두에서 일관되게 나타남(Fig. S5).
+16. 시간대별로 나누어 분석한 공간적 상관관계의 R² 값은 Fig. 5에서 전체 데이터를 통합한 값보다 더 높게 나타남.
+17. 생장기가 진행됨에 따라 이러한 R² 값은 점차 감소했으며, 특히 NDVI 및 CCI와 SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R 간의 관계에서 두드러졌음.
+18. 잎 노화기 데이터셋에서는 NDVI 및 CCI와 SI<sub>Fobs,FR</sub> 또는 SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R 간에 유의미한 관계가 관찰되지 않았음(Fig. 6). 다만, DOY 251에서는 캐노피 NIRV와 SIF<sub>obs,FR</sub> 사이에 유의한 상관관계가 있었음. 시간대별로 데이터를 분석했을 때도 변수 간의 상관관계는 미미했으며, 태양 고도 영향을 최소화하는 정오 시간대에서는 DOY 282에서 NDVI와 SIF<sub>obs,FR<sub> / NIR<sub>V</sub>R 간에 단 하나의 유의한 상관관계가 관찰되었음(Fig. S6).
+
+  <img width="1109" height="331" alt="image" src="https://github.com/user-attachments/assets/d90033fe-c56e-49ea-9ab8-9620f637f97a" />
+
+- 즉,
+  - 생장기에는 캐노피의 생리적 지표(CCI, NDVI)와 형광(SIF) 간의 공간적 상관관계가 뚜렷하였음.
+  - 시간대별 분석에서는 정오 시간대가 가장 안정적이었으며, R<sup>2<sup> 값도 높았음.
+  - 생장기 후반으로 갈수록 상관관계가 약화됨 -> 생리적 활동 감소 또는 구조적 변화 가능성 시사
+  - 잎 노화기에는 대부분의 지표 간 상관관계가 사라짐. 단, DOY 251과 DOY 282에서만 예외적 관계가 관찰됨.
+ 
+  <img width="671" height="681" alt="image" src="https://github.com/user-attachments/assets/334f5138-fe97-441c-9f51-b65353089b65" />
+
+<br>
+
+- &beta;분포 매개변수 ν와 μ
+  
+  <img width="1113" height="303" alt="image" src="https://github.com/user-attachments/assets/fafc2ecd-ed18-4e20-ba76-0c7d106b7fa9" />
+
+  - ν와 μ는 캐노피 구조의 다양성과 정렬 상태를 정량적으로 표현하는 데 사용
+  - ν는 순수한 분산, μ는 평균을 고려한 분산으로 해석되며, 캐노피의 광흡수 구조와 생리적 반응을 이해하는 데 핵심적인 변수임
+  - 생장기 동안 베타 분포 매개변수(ν, μ)와 원격 탐사 변수들 간에 음의 상관관계가 관찰되었음. 이는 잎 각도의 변동성이 클수록 캐노피 NDVI, CCI, SIF<sub>obs,FR</sub> 및 SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R 값이 더 크다는 것을 의미함(Fig. 7).
+
+    <img width="965" height="750" alt="image" src="https://github.com/user-attachments/assets/1a9bf203-0cab-4c52-a161-3f610485f6fa" />
+
+  - 반면, LAVD와 원격 탐사 변수들 간에는 유의한 모델이 나타나지 않았으며, β 분포 LAD 매개변수와 캐노피 NIR<sub>V</sub> 간에도 유의한 관계는 없었음.
+  - ν<sub>10%</sub>와 μ<sub>10%</sub>를 사용한 선형 혼합 모델은 유사한 R²c(조건부 결정계수)를 보였지만, R²m(고정 효과만으로 설명되는 분산 비율)에서는 큰 차이를 보였음.
+  - μ<sub>10%</sub>를 사용한 모델은 더 높은 R²m 값을 보였고, R²c와 R²m 간의 차이도 더 작았음. 캐노피 NDVI와 SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R는 ν<sub>10%</sub> 및 μ<sub>10%</sub>와 가장 강한 상관관계를 보였으며, R²c ≥ 0.75였음. 특히 μ<sub>10%</sub>는 NDVI와 SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R의 변동성 중 각각 80%와 73%를 설명함.
+  - 예측 변수로서 LIDFa<sub>10%</sub>를 사용한 모델은 유의하지 않았지만, LIDFb<sub>10%</sub>는 캐노피 NDVI와 SIF<sub>obs,FR</sub> / NIR<sub>V</sub>R와 양의 상관관계를 보였음. 다만, LIDFb<sub>10%</sub>의 R²c 값은 ν<sub>10%</sub> 및 μ<sub>10%</sub>보다 낮았고, R²m 값은 두 매개변수 사이에 위치했음.
+  - AVD<sub>10%</sub>를 사용한 모델은 유의하지 않았지만, ENF 캐노피 중 하나(적송, ID 30)는 LAVD<sub>10%</sub> 값이 높았으며, LAD 매개변수는 다른 ENF 캐노피와 유사했음.
+
+    <img width="1118" height="302" alt="image" src="https://github.com/user-attachments/assets/896824db-eb5b-4e09-a973-9c6d46e162ed" />
+
+  <br>
+
+  - 잎 노화기(foliar senescence) 데이터셋을 분석한 결과, 유의미한 상관관계는 관찰되지 않았으나(Fig. S7), μ<sub>10%</sub>와 LIDFb를 사용한 모델은 캐노피 NDVI 및 SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R에 대해 유의미한 경향(P ≤ 0.05)을 보였음.
+  - 평균(mean) 및 표준편차(SD) 잎 각도와의 관계는 생장기와 잎 노화기 데이터셋 간에 차이를 보였음(Figs. S8, S9).
+  - 생장기에서는 SD<sub>10%</sub>를 사용한 모델이 모든 원격 탐사 변수들과 유의미한 경향을 보였음(Fig. S8).
+  - 잎 노화기 데이터셋에서는 mean<sub>10%</sub>가 캐노피 NDVI 및 NIR<sub>V</sub>에 대해 유의미한 경향을 보였으며(Fig. S9), mean<sub>10%</sub>는 NDVI와는 양의 상관관계, NIR<sub>V</sub>와는 음의 상관관계를 나타남.
+  - β 분포 매개변수 μ는 LIDFb와 매우 높은 상관관계를 보였으며(R² ≥ 0.90), LIDFa와 평균 잎 각도 간의 관계는 거의 완벽한 선형 관계를 보였음(R² ≥ 0.98).
+
+    <img width="1119" height="266" alt="image" src="https://github.com/user-attachments/assets/57d84537-e415-44ce-a614-cdb5aa6eb883" />
+
+
+    <br>
+    <br>
+
+  - 원격 탐사 지표와 잎 엽록소 함량 간의 관계
+ 
+    - PROSPECT-D 역산 모델은 잎 클립을 사용해 400nm ~ 950nm 범위에서 측정한 잎 반사 스펙트럼을 정확하게 재현할 수 있었음(Fig. S10).
+    - 측정된 반사 스펙트럼과 모델이 시뮬레이션한 스펙트럼을 비교한 결과, 평균 제곱근 오차(RMSE)와 표준 오차는 0.0086 ± 0.0004로 나타남.
+    - 생장기 동안 잎 엽록소 함량은 52–86 μg/cm² 범위였으며, 중앙값은 67 μg/cm², 표준편차는 ±9.
+    - 잎 노화기 데이터셋에서는 엽록소 함량이 35 ~ 78 μg/cm² 범위였고, 중앙값은 53 μg/cm², 표준편차는 ±13.
+    - 각 샘플링 주간의 정오 시간대 SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R 관측값과 잎 엽록소 함량을 상관 분석한 결과, 두 변수 간에 양의 상관관계가 두 데이터셋 모두에서 나타남(Fig. 8).
+    - 잎 엽록소 함량과 LAVD<sub>100%</sub> 및 μ<sub>100%</sub> 간에는 유의한 상관관계가 관찰되지 않았지만, ν<sub>100%</sub>와는 두 데이터셋 모두에서 음의 상관관계가 나타남(Fig. 9).
+   
+      <img width="993" height="881" alt="image" src="https://github.com/user-attachments/assets/9e809c3a-ceb4-4717-bb64-5cc8cdaf92eb" />
+
+    
+    <br>
+    <br>
+
+  - SIF<sub>obs,FR</sub> / NIR<sub>V</sub>R와 &Phi;<sub>F,FR</sub> 간의 관계 평가
+    
+    - SIF<sub>obs,FR</sub>/NIR<sub>V</sub>R가 &Phi;<sub>F,FR</sub>(형광 양자 효율)과 비례한다는 가정을 검증한 결과, SIF<sub>obs,FR</sub> / NIR<sub>V</sub>R, PAR/S<sub>NIR</sub>, 그리고 (1 − ωPAR)/ωNIR 간에 뚜렷한 관계는 관찰되지 않았음(Fig. S11).
+    - (1 − ωPAR)/ωNIR 값은 두 데이터셋의 DBF(낙엽활엽수림) 수관들(canopies) 사이에서 거의 변하지 않았음.
+    - 그러나 잎 노화기 데이터셋에서는 DBF와 ENF(침엽상록수림) 캐노피 간에 차이가 있었으며, ENF 캐노피의 (1 − ωPAR)/ωNIR 값은 약 0.9였고, DBF 캐노피는 약 1 수준(Fig. S11). 생장기 데이터셋에서는 ENF 캐노피가 포함되지 않았음.
+    - PAR/S<sub>NIR</sub> 값은 잎 노화기 데이터셋에서 더 큰 변동성을 보였지만, 전반적으로는 그 변동 폭이 작았음. 각 비행에서 모든 원격 탐사 관측은 약 10분 이내에 이루어졌기 때문에, PAR/S<sub>NIR</sub> 값의 시간적 변화는 크지 않을 것으로 판단됨.
+    - Fig. 4 ~ 9의 분석이 주 단위로 분리되어 수행되었기 때문에, PAR/S<sub>NIR</sub>의 변동성은 최소화되었을 것임.
+    - <b>이러한 결과를 바탕으로, 생장기 데이터셋에서 SIF<sub>obs,FR</sub> / NIR<sub>V</sub>R의 변동성은 주로 &Phi;<sub>F,FR</sub>의 차이에 의해 발생한 것으로 결론지음.</b>
+
+<br>
+<br>
+
+# Discussion
+
+
