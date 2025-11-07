@@ -338,3 +338,21 @@ Solar-induced chlorophyll fluorescence (SIF), Terrestrial laser scanning (TLS), 
   
   <img width="1118" height="275" alt="image" src="https://github.com/user-attachments/assets/40b1fef3-1b83-4105-9405-a6663089543e" />
   
+<br>
+
+# Conclusion
+
+- 본 연구는 새로운 원격 탐사 플랫폼을 활용하여 두 생육 단계(2020년 잎 노화기, 2021년 생장기) 동안 SIF(태양 유도 엽록소 형광) 및 캐노피 반사율의 공간적 변동성을 연구하였음.
+- 이러한 원격 탐사 측정은 TLS(지상 라이다 스캔) 및 엽면 샘플링(foliar sampling)과 결합하여 식물 캐노피의 기능적. 구조적 특성이 공간적으로 어떻게 함께 변화하는지를 조사함.
+- 본 연구는 LAD(잎 각도 분포), SIF, 캐노피 반사 지수, 잎 엽록소 함량 간의 실증적 관계를 분석한 최초의 사례임.
+
+- 생장기 동안 LAD 매개변수 ν와 μ는 수관 NDVI, CCI, SIF, SIF<sub>obs,FR</sub> / NIR<sub>V</sub>R와 음의 상관관계를 보였으며, ν는 잎 엽록소 함량과도 음의 상관관계를 나타냈음.
+- NDVI와 CCI는 SIF 및 SIF<sub>obs,FR</sub> / NIR<sub>V</sub>R와 양의 상관관계를 보였음.
+- 이는 잎 각도의 변동성이 클수록 엽록소 함량과 원격 탐사 지표 값이 더 크다는 것을 의미함(ν와 μ는 잎 각도 분산과 역의 관계를 가지기 때문).
+- 이러한 결과는 캐노피의 기능과 구조 간의 조화라는 생태학적 원리와 일치함.
+- 본 연구에서는 캐노피 내 잎 각도의 다양성이 가시광선의 광 포획을 증가시키고, 이에 따라 잎 자원(엽록소 등)의 더 많은 할당과 전체 캐노피의 광합성 증가를 유도한다고 가정하였음.
+- 또한, 베타 분포 매개변수가 실제 잎 각도 분포를 LIDF(LIDFa, LIDFb)보다 더 잘 설명한다는 점도 발견함. LIDF는 복사 전달 모델(RTM)에서 일반적으로 사용되지만, 본 연구에서는 β 분포가 더 적합한 결과를 보였음.
+- 이로써 캐노피 반사율과 SIF의 공간적 변동성을 해석할 때 수관 구조의 직접적 효과와 간접적 효과를 구분하는 것이 중요함을 보였음.
+
+ <img width="1117" height="282" alt="image" src="https://github.com/user-attachments/assets/02bdf31f-5cfb-44e2-83a6-05a628497762" />
+ 
