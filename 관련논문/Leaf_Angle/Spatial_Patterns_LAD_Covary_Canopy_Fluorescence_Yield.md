@@ -21,4 +21,4 @@ Solar-induced chlorophyll fluorescence (SIF), Terrestrial laser scanning (TLS), 
 # 용어 정리
 |용어|설명|
 |:-|:-|
-|green elephant|모두가 알고 있지만 외면하는 환경 문제|
+|foliar biochemistry|식물 잎의 생화학적 특성을 연구하는 분야. 광합성, 호흡, 색소 합성 등 잎에서 일어나는 생리적.화학적 과정을 다루는 분야|
