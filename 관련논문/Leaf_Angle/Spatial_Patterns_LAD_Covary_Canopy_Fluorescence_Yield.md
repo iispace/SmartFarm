@@ -39,7 +39,12 @@ Solar-induced chlorophyll fluorescence (SIF), Terrestrial laser scanning (TLS), 
 |landscape level|경관 수준. 넓은 지역 전체를 의미. 예를 들어 숲 전체, 농장 단위, 생태계 단위 등 개별 나무나 캐노피를 넘어서 공간적으로 확장된 범위|
 |NIR albedo|근적외선 반사율|
 |excitation|전자가 외부 에너지를 흡수해서 기저 상태(ground state)에서 더 높은 에너지 수준으로 올라가는 현상. 더 높은 수준의 상태를 여기 상태(excited state)라 함.<br>  - 여기 상태는 불안정하여 곧 다시 에너지를 방출하며 기저 상태로 돌아감.<br>  - 이 때 방출되는 에너지 형태의 예시는 아래와 같음.<br> <img width="664" height="186" alt="image" src="https://github.com/user-attachments/assets/c2f4df08-38d6-4379-9aa3-66e24ea4eee9" />|
-
+|Optical proxies| 직접 측정이 어려운 생물학적 또는 구조적 특성을 광학적 신호(반사율, 스펙트럼 등)로 간접 추정하는 방법|
+|Formative studies|어떤 학문 분야나 기술, 이론, 방법론의 초기 발전 과정에서 핵심적인 기여를 한 연구들. 단순한 초기 연구가 아니라, 해당 분야의 방향성과 핵심 개념을 형성한 연구를 의미함.|
+|FPAR|Fraction of Photosynthetically Active Radiation<br>  - 식물이 흡수한 광합성 유효 복사(PAR)의 비율. 즉, 광합성에 실제로 사용된 빛의 양|
+|GPP|Gross Primary Productivity<br>  -  식물이 광합성을 통해 생성한 총 유기물 생산량. 생태계 생산성의 핵심 지표|
+|NIR<sub>V</sub>|근적외선 반사 중 식생에 의한 근적외선 반사만을 분리한 것|
+|NDVI|Normalized Difference Vegetation Index<br>   - 적색과 근적외선 반사율을 이용한 식생 지표|
 
 
 # Introduction
@@ -55,5 +60,20 @@ Solar-induced chlorophyll fluorescence (SIF), Terrestrial laser scanning (TLS), 
     1. 캐노피 엽록소 함량(steady-state biochemistry) : 캐노피 전체의 엽록소 농도 => 형광(SIF)의 에너지 원천
     2. 광합성 생리(&Phi;<sub>F; &lambda;</sub>) : 특정 파장에서의 형광 양자 수율 => 실제 형광 생성 효율
     3. 캐노피 구조(i<sub>0</sub>, f<sup>esc</sup><sub>&lambda;, &Omega;</sub>): 캐노피의 차단율(i<sub>0</sub>)과 형광 광자의 탈출 확률( f<sup>esc</sup><sub>&lambda;, &Omega;</sub>) => 형광에 센서(&Omega;)에 도달할 수 있는지 결정
-   
-  
+
+<br>
+
+  - SIF는 단순한 형광 신호가 아니라, 광합성, 구조, 스트레스 반응이 얽히 복잡한 생리 신호이므로, SIF를 정확한 광합성 지표로 활용하려면 &Phi;<sub>F</sub>와 &Phi;<sub>p</sub>의 관계, 수관 구조, 환경 조건을 모두 고려해야 함.
+    
+    <img width="1128" height="357" alt="image" src="https://github.com/user-attachments/assets/6dd4b97d-209e-4a3c-8cb4-29ea09c1729a" />
+
+  - SIF(태양 유도 형광)과 &Phi;<sub>F</sub>(형광 양자 수율)는 광합성과 관련된 잎의 생화학적 특성과 함께 변화함(Sun et al., 2023a, 2023b; Zhang et al., 2014). 질소 처리 실험은 농작물과 자연 생태계에서 SIF의 차이를 보여주었다(Ač et al., 2015; Jia et al., 2021; Migliavacca et al., 2017).
+
+  - SIF(태양 유도 형광)과 &Phi;<sub>F,λ</sub>(형광 양자 수율)는 잎 수준에서 엽록소 함량과 상관관계를 가지며(Tubuxin et al., 2015), 캐노피 수준의 관측에서는 색소 풀(pigment pools)과 함께 변화함(Kim et al., 2021; Pierrat et al., 2022). 이때 엽록소:카로티노이드 지수(CCI, Gamon et al., 2016)가 엽록소의 광학적 대리 지표로 사용됨(Wong et al., 2020).
+
+  - 광학적 대리 지표(optical proxies)를 활용하면, 복잡한 3D 구조를 직접 측정하지 않고도 원격 탐사 데이터로 구조적 특성을 추정할 수 있음. 예를 들어, NIR은 캐노피 구조에 매우 민감하며, NDVI와 같은 지표는 이러한 구조적 특성을 반영하여 광합성 생산성 추정에 활용되고 있음. NDVI는 FPAR를 추정하는 데 사용할 수 있다고 인식되어졌으며, FPAR는 GPP의 광 이용 효율 모델에서 핵심 매개변수임.
+    - 원칙적으로 NIR<sub>V</sub>는 FPAR을 추정하는 데 있어 NDVI보다 더 나은 대리 지표이지만, 특히 해상도가 낮은 위성 영상의 경우, 식생이 아닌 구성 요소들이 전체 장면의 근적외선 반사(NIR<sub>T</sub>)에서 상당한 비율을 차지하는 경우가 있으므로, 이러한 특성은 주의해야 함.
+    - Badgley 등(2017)은 NIR<sub>V</sub>가 NDVI와 NIR<sub>T</sub>의 곱으로 근사될 수 있음을 보여주었음. 여기서 NDVI는 식생에 의한 근적외선 반사 비율을 나타냄. 이러한 NDVI 근사 방식은 다양한 식생 유형과 공간 규모에 걸쳐 NDVI나 SIF보다 GPP(총 1차 생산성)를 더 잘 예측하는 지표로 밝혀짐(Badgley et al., 2019; Baldocchi et al., 2020; Dechant et al., 2020, 2022).
+    - NIR<sub>V</sub>는 far-red SIF와 물리적 기반을 공유하기 때문에 f<sup>esc</sup><sub>&lambda;, &Omega;</sub>를 근사할 수 있음(Zeng et al., 2019). 추가적인 모델링과 현장 기반 분석을 통해 NDVI의 복사량 등가값(NIR<sub>V</sub>R을 사용하여 &Phi;<sub>F</sub>를 도출할 수 있음이 밝혀짐(Zeng et al., 2022).
+
+  - 
