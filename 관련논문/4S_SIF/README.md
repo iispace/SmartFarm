@@ -25,7 +25,7 @@ Sun-induced chlorophyll fluorescence, Photodiode, Bandpass filters, Spectroradio
 |PAR|Photosynthetically Active Radiation, PAR<br><br> - 식물이 광합성에 사용할 수 있는 가시광 영역(400 ~ 700 nm)의 빛<br> - 빛의 세기가 아니라 광자의 개수(입자 수)가 중요하므로 PPFD 단위로 측정(광합성 반응은 에너지의 세기보다는 얼마나 많은 광자가 엽록소에 도달했는가로 결정되므로...)|
 |PPDF|광합성 광자 플럭스 밀도(Photosynthetic Photon Flux Density)<br><br> - 초당 특정 표면적에 착지하는 PAR 범위 내의 광자 수 측정 단위<br> - 초당 제곱미터당 마이크로몰(μ몰/m²/s) 단위로 표시|
 |Plant functional types(식물 기능형)|식물 종(species)이 아니라, 기능적 특성(functional traits)에 따라 식물을 분류하는 방식 <br> - C3 작물: 쌀, 밀 등 일반적인 광합성 경로 사용 작물 <br> - C4 작물: 옥수수, 사탕수수 등 고온.강광 환경에 적응한 작물 <br> - CAM: 선인장, 다육식물 등 밤에 CO<sub>2</sub>를 흡수하는 식물|
-|gross primary production (GPP)|식물이나 조류 같은 광합성 생물들이 태양 에너지를 이용해 CO<sub>2</sub>를 유기물로 전환하는 총량. 즉, 광합성을 통해 생성된 총 에너지 또는 탄소량<br>GPP는 대기 중 CO<sub>2</sub> 흡수량을 나타내므로 탄소 순환을 이해하는 데 핵심 지표임<br>GPP가 높다는 것은 식생이 활발히 성장하고 있다는 의미 |
+|gross primary production (GPP)|식물이나 조류 같은 광합성 생물들이 태양 에너지를 이용해 CO<sub>2</sub>를 유기물로 전환하는 총량. 즉, 광합성을 통해 생성된 총 에너지 또는 탄소량<br> - GPP는 대기 중 CO<sub>2</sub> 흡수량을 나타내므로 탄소 순환을 이해하는 데 핵심 지표임<br> - GPP가 높다는 것은 식생이 활발히 성장하고 있다는 의미 <br> - SIF는 GPP를 매우 유의하게 추정할 수 있는 산출물로 사용 가능[[1]](#ref_1)|
 |Vegetation phenology|식생의 생물계절학. 식물의 생장과 계절적 변화 과정을 연구하는 분야<br> - 발아(Germination)<br> - 잎 발달(Leaf-out)<br> - 개화(Flowering)<br> - 결실(Fruiting)<br> - 낙엽(Leaf senescence) 등의 항목 관찰|
 |cropland|경작지|
 |O₂A 밴드<br>(Oxigen A-band)|산소 분자가 태양광을 흡수하는 특정 파장대로, 대략 760.7nm 근처의 근적외선 영역에 위치<br> - 이 영역은 대기 중 산소(O₂)가 태양광을 강하게 흡수하는 지점이기 때문에 식물에서 방출되는 형광(SIF) 신호가 상대적으로 두드러지게 나타나는 구간임.|
